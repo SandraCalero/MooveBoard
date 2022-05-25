@@ -1,8 +1,8 @@
 import "./App.css";
 import { PostIt } from "./PostIt";
 
-const App = () => {
+function App() {
   return <PostIt />;
-};
+}
 
-export default App;
+export { App };

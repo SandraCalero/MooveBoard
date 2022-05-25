@@ -1,6 +1,6 @@
 import { DragEvent, useState } from "react";
 
-export const PostIt = () => {
+function PostIt() {
   const [styleElement, setStyleElement] = useState({
     left: "0px",
     top: "0px",
@@ -53,4 +53,6 @@ export const PostIt = () => {
       onDragEnd={handleDragEvent}
     ></div>
   );
-};
+}
+
+export { PostIt };
