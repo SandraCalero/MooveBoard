@@ -66,8 +66,7 @@ export default function PostIt() {
 				draggable='true'
 				name='note'
 				id='note'
-				cols={parseInt('20', 10)}
-				rows={parseInt('10', 10)}
+				wrap='physical'
 			/>
 		</div>
 	);

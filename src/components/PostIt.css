@@ -1,7 +1,7 @@
 .dragNote {
-	min-height: 15rem;
-	min-width: 15rem;
-	height: auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	background-color: yellow;
 	margin: 0.2rem 0;
 	position: absolute;
@@ -10,11 +10,13 @@
 }
 
 .note {
+	padding: 16px;
+	height: 20rem;
+	width: 20rem;
 	color: #0f0f0f;
 	background: transparent;
 	outline: none;
 	border: none;
-	text-align: center;
 }
 
 .note:active {

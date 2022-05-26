@@ -3,21 +3,17 @@ module.exports = {
 		browser: true,
 		es2021: true,
 	},
-	settings: {
-		react: {
-			version: 'detect',
-		},
-	},
 	extends: [
-		'plugin:react/recommended',
-		'plugin:react/jsx-runtime',
 		'airbnb',
-
-		'prettier',
 		'eslint-config-prettier',
 		'eslint:recommended',
+		'plugin:@typescript-eslint/eslint-recommended',
+		'plugin:@typescript-eslint/recommended',
 		'plugin:import/recommended',
 		'plugin:import/typescript',
+		'plugin:react/jsx-runtime',
+		'plugin:react/recommended',
+		'prettier',
 	],
 	parser: '@typescript-eslint/parser',
 	parserOptions: {
@@ -29,8 +25,6 @@ module.exports = {
 	},
 	plugins: ['react', '@typescript-eslint'],
 	rules: {
-		'react/react-in-jsx-scope': 'off',
-		'react/jsx-filename-extension': [1, { extensions: ['.ts', '.tsx'] }],
 		'import/extensions': [
 			'error',
 			'ignorePackages',
@@ -39,5 +33,13 @@ module.exports = {
 				tsx: 'never',
 			},
 		],
+		'no-console': 'warn',
+		'react/jsx-filename-extension': [1, { extensions: ['.ts', '.tsx'] }],
+		'react/react-in-jsx-scope': 'off',
+	},
+	settings: {
+		react: {
+			version: 'detect',
+		},
 	},
 };
