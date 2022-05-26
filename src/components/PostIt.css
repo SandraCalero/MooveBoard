@@ -1,0 +1,22 @@
+.dragNote {
+	min-height: 15rem;
+	min-width: 15rem;
+	height: auto;
+	background-color: yellow;
+	margin: 0.2rem 0;
+	position: absolute;
+	cursor: -webkit-grab;
+	box-shadow: 0.5rem 0.5rem 1.5rem 0 rgba(0, 0, 0, 0.2);
+}
+
+.note {
+	color: #0f0f0f;
+	background: transparent;
+	outline: none;
+	border: none;
+	text-align: center;
+}
+
+.note:active {
+	cursor: -webkit-grab;
+}
