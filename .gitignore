@@ -4,6 +4,11 @@
 /node_modules
 /.pnp
 .pnp.js
+.eslintignore
+.eslintrc.js
+.husky/pre-commit
+.prettierignore
+.prettierrc
 
 # testing
 /coverage

@@ -1,8 +1,6 @@
-import "./App.css";
-import { PostIt } from "./PostIt";
+import './App.css';
+import PostIt from './PostIt';
 
-function App() {
-  return <PostIt />;
+export default function App() {
+	return <PostIt />;
 }
-
-export { App };
