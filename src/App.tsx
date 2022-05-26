@@ -1,6 +1,11 @@
 import './App.css';
-import PostIt from './PostIt';
+import PostIt from './components/PostIt';
 
 export default function App() {
-	return <PostIt />;
+	return (
+		<>
+			<PostIt />
+			<PostIt />
+		</>
+	);
 }
