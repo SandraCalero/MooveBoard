@@ -1,19 +1,49 @@
-.newPostItButton {
-	background: none;
+/* Button base
+=================*/
+
+.button {
+	border-radius: 0.8rem;
 	border: none;
-	padding: 0;
-	z-index: 4;
+	margin: 0.8rem;
 }
 
-.newPostItButton img {
+.button:hover,
+.button img:hover {
+	opacity: 0.9;
+}
+
+.button:active {
+	transform: translateY(4px);
+}
+
+/* New Post It Button */
+
+.button.newPostItButton {
+	background: none;
+	z-index: 4;
+	padding: 0;
+	margin: 0;
+}
+
+.button.newPostItButton img {
 	width: 10rem;
 	height: 10rem;
 }
 
-.newPostItButton img:hover {
-	opacity: 0.8;
+/* Modal buttons */
+
+.confirmButton,
+.cancelButton {
+	width: 10rem;
+	height: 5.2rem;
 }
 
-.newPostItButton:active {
-	transform: translateY(4px);
+.button.confirmButton {
+	background: #0b5ed7;
+	color: white;
+}
+
+.button.cancelButton {
+	background: #c4c4c4;
+	color: #323233;
 }

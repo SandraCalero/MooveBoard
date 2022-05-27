@@ -1,6 +1,6 @@
+import TrashSpace from 'components/templates/Trashspace/TrashSpace';
+import WorkSpace from 'components/templates/Workspace/WorkSpace';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import TrashSpace from '../organisms/trashspace/TrashSpace';
-import WorkSpace from '../organisms/workspace/WorkSpace';
 
 export default function Root() {
 	return (

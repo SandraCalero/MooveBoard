@@ -1,22 +1,25 @@
 import './Button.css';
-import newPostIt from 'assets/icons/newPostIt.svg';
 
 interface ButtonProps {
 	text?: string;
+	icon?: string;
 	variant: string;
+	altText?: string;
 }
 
-function Button({ text, variant }: ButtonProps) {
+function Button({ text, variant, icon, altText }: ButtonProps) {
 	return (
-		<button name='button' type='button' className={variant}>
+		<button name='button' type='button' className={`button ${variant}`}>
 			{text}
-			<img src={newPostIt} alt='Create new Post It' />
+			{icon && <img src={icon} alt={altText} />}
 		</button>
 	);
 }
 
 Button.defaultProps = {
 	text: '',
+	icon: '',
+	altText: '',
 };
 
 export default Button;
