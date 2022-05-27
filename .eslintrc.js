@@ -33,6 +33,7 @@ module.exports = {
 				tsx: 'never',
 			},
 		],
+		'import/no-unresolved': 'off',
 		'no-console': 'warn',
 		'react/jsx-filename-extension': [1, { extensions: ['.ts', '.tsx'] }],
 		'react/react-in-jsx-scope': 'off',

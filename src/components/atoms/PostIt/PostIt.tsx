@@ -7,16 +7,8 @@ export default function PostIt() {
 		top: '15rem',
 	});
 
-	const handleDragStart = (event: DragEvent<HTMLDivElement>) => {
-		/* const target = event.target as HTMLDivElement; */
-		event.dataTransfer.setData('data', 'dataItem');
-		event.stopPropagation();
-	};
-
 	const handleDrag = (event: DragEvent<HTMLDivElement>) => {
 		event.stopPropagation();
-		/* 		const target = event.target as HTMLDivElement;
-		target.style.zIndex += 1; */
 	};
 
 	const handleDragEnd = (event: DragEvent<HTMLDivElement>) => {
@@ -37,16 +29,6 @@ export default function PostIt() {
 
 		setStylePostIt(newPostItPosition);
 	};
-	/* 
-	const handleDoubleClick = () => {
-		const element = document.getElementById('dragtarget');
-		if (element && !element.hasChildNodes()) {
-			const note = document.createElement('input');
-			note.type = 'text';
-			note.className = 'note';
-			element.appendChild(note);
-		}
-	}; */
 
 	return (
 		<div
@@ -54,14 +36,13 @@ export default function PostIt() {
 			style={stylePostIt}
 			draggable='true'
 			id='dragtarget'
-			onDragStart={handleDragStart}
-			onDragOver={(event) => {
-				event.preventDefault();
-			}}
+			onDragStart={() => console.log('DragStart')}
+			onDragOver={(event) => console.log(event)}
 			onDrag={handleDrag}
 			onDragEnd={handleDragEnd}
 		>
 			<textarea
+				onChange={(event) => console.log(event.target.value)}
 				className='note'
 				draggable='true'
 				name='note'
