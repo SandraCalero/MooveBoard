@@ -1,5 +1,4 @@
-#drop_zone {
-	border: 5px solid blue;
-	width: 200px;
-	height: 100px;
+.trashBinLink img {
+	width: 10rem;
+	height: 10rem;
 }
