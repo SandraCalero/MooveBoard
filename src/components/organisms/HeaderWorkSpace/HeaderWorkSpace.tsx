@@ -1,9 +1,8 @@
 import Button from 'components/atoms/Button/Button';
 import TrashBinLink from 'components/molecules/TrashBinLink/TrashBinLink';
-import newPostIt from 'assets/icons/newPostIt.svg';
-import './Header.css';
+import newPostIt from 'assets/icons/newPostIt.png';
 
-export default function Header() {
+export default function HeaderWorkSpace() {
 	return (
 		<header className='header'>
 			<Button

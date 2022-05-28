@@ -1,22 +1,21 @@
-.trashBinLink {
+.backLink {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	text-decoration: none;
+	margin: 0.8rem;
 }
 
-.trashBinLink:visited {
+.backLink:visited {
 	color: inherit;
 }
-.trashBinLink img {
+
+.backLink img {
 	width: 6rem;
 	height: 6rem;
 	margin: 0.8rem;
 }
 
-.trashBinLink img:active {
+.backLink img:active {
 	transform: translateY(0.4rem);
-}
-.trashBinLink img:hover {
-	opacity: 0.9;
 }

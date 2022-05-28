@@ -1,13 +1,13 @@
 import Modal from 'components/molecules/Modal/Modal';
-import Header from 'components/organisms/Header/Header';
+import HeaderWorkSpace from 'components/organisms/HeaderWorkSpace/HeaderWorkSpace';
 import PostIt from '../../atoms/PostIt/PostIt';
 
 export default function WorkSpace() {
 	return (
-		<>
-			<Header />
+		<section>
+			<HeaderWorkSpace />
 			<Modal />
 			<PostIt />
-		</>
+		</section>
 	);
 }
