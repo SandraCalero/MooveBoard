@@ -1,14 +1,19 @@
+/* Modal base
+   ============================= */
+
 .glass {
 	display: none;
 	position: absolute;
-	width: 100%;
-	height: 100vh;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	width: var(--full-size);
+	height: var(--full-size);
 	justify-content: center;
 	align-items: center;
 	z-index: 5;
 	background: #c4c4c4e8;
 	top: 0;
-	left: 0;
 }
 
 .glass.show {
@@ -20,33 +25,37 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	background: white;
-	border: solid 1px;
+	background: var(--white);
 	max-width: 30rem;
 	height: auto;
 	border: none;
-	border-radius: 0.5rem;
-	box-shadow: 0px 0px 10px 0px rgb(0 0 0 / 50%);
+	border-radius: var(--border-radius-regular);
+	box-shadow: var(--box-shadow);
 }
 
 .modalTitle,
-.modalInfo,
+.modalMessage,
 .divModalButtons {
 	display: flex;
 	align-items: center;
-	padding: 1.2rem;
+	padding: var(--padding-regular);
 	margin: 0;
 }
 
 .modal .modalTitle {
-	margin: 0.8rem;
+	margin: var(--margin-regular);
+	text-align: center;
 }
 
-.modal .modalInfo {
-	border-top: 1px solid #c4c4c4;
-	border-bottom: 1px solid #c4c4c4;
+.modal .modalMessage {
+	border-top: var(--border-line);
+	border-bottom: var(--border-line);
 }
 
-.modalInfo * {
-	margin: 0.8rem;
+.modalMessage * {
+	margin: var(--margin-regular);
+}
+
+.modalMessage img {
+	width: 4rem;
 }

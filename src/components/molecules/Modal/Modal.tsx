@@ -1,18 +1,23 @@
-import warning from 'assets/icons/warning.svg';
+import warning from 'assets/icons/warning.png';
 import Button from 'components/atoms/Button/Button';
 import './Modal.css';
 
-export default function Modal() {
+interface ModalProps {
+	title: string;
+	message: string;
+}
+
+export default function Modal({ title, message }: ModalProps) {
 	/* const wrapperClass = classNames('glass', {
 		show: isConfirmationOpen,
 	}); */
 	return (
 		<div className='glass'>
 			<div className='modal'>
-				<h2 className='modalTitle'>Delete Post It Note</h2>
-				<div className='modalInfo'>
+				<h2 className='modalTitle'>{title}</h2>
+				<div className='modalMessage'>
 					<img src={warning} alt='Warning icon' />
-					<p>Are you sure you want to send this note to the trash?</p>
+					<p>{message}</p>
 				</div>
 
 				<div className='divModalButtons'>

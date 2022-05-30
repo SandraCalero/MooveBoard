@@ -1,62 +1,58 @@
 /* Button base
-=================*/
+   ============================= */
 
 .button {
-	border-radius: 0.8rem;
 	border: none;
-	margin: 0.8rem;
+	margin: var(--margin-regular);
+	padding: var(--no-padding);
 	background: none;
+	color: inherit;
+}
+
+.button img {
+	width: var(--image-size);
+	height: var(--image-size);
+	margin: var(--margin-regular);
 }
 
 .button:hover,
 .button img:hover {
-	opacity: 0.9;
+	opacity: var(--hover-opacity);
 }
 
 .button:active {
-	transform: translateY(0.4rem);
+	transform: var(--click-button-transform);
 }
 
 /* New Post It Button */
 
 .button.newPostItButton {
 	z-index: 4;
-	padding: 0;
-}
-
-.button.newPostItButton img {
-	width: 6rem;
-	height: 6rem;
 }
 
 /* Modal buttons */
 
-.confirmButton,
-.cancelButton {
+.button.confirmButton,
+.button.cancelButton {
 	width: 10rem;
 	height: 5.2rem;
+	border-radius: var(--border-radius-regular);
 }
 
 .button.confirmButton {
-	background: #0b5ed7;
-	color: white;
+	background: var(--blue);
+	color: var(--white);
 }
 
 .button.cancelButton {
-	background: #c4c4c4;
-	color: #323233;
+	background: var(--light-gray);
 }
+
+/* Trash space buttons */
 
 .button.emptyTrash,
 .button.restorePostIts {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-}
-
-.button.emptyTrash img,
-.button.restorePostIts img {
-	width: 6rem;
-	height: 6rem;
-	margin: 0.8rem;
 }

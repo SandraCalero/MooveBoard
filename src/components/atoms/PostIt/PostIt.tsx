@@ -3,8 +3,8 @@ import './PostIt.css';
 
 export default function PostIt() {
 	const [stylePostIt, setStylePostIt] = useState({
-		left: '15rem',
-		top: '15rem',
+		left: 'auto',
+		top: 'auto',
 	});
 
 	const handleDrag = (event: DragEvent<HTMLDivElement>) => {
@@ -32,9 +32,9 @@ export default function PostIt() {
 
 	return (
 		<div
-			className='dragNote'
+			className='postItContainer'
 			style={stylePostIt}
-			draggable='true'
+			/* draggable='true' */
 			id='dragtarget'
 			onDragStart={() => console.log('DragStart')}
 			onDragOver={(event) => console.log(event)}
@@ -43,11 +43,11 @@ export default function PostIt() {
 		>
 			<textarea
 				onChange={(event) => console.log(event.target.value)}
+				disabled
 				className='note'
-				draggable='true'
+				/* draggable='true' */
 				name='note'
 				id='note'
-				wrap='physical'
 			/>
 		</div>
 	);
