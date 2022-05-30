@@ -3,7 +3,7 @@ import Modal from 'components/molecules/Modal/Modal';
 import TrashBinLink from 'components/molecules/TrashBinLink/TrashBinLink';
 import Header from 'components/organisms/Header/Header';
 import newPostIt from 'assets/icons/newPostIt.png';
-import PostIt from '../../atoms/PostIt/PostIt';
+import PostItList from 'components/molecules/PostItList/PostItList';
 
 export default function WorkSpace() {
 	return (
@@ -16,11 +16,11 @@ export default function WorkSpace() {
 				/>
 				<TrashBinLink />
 			</Header>
+			<PostItList disabled={false} postItVariant='postItCreated' draggable />
 			<Modal
 				title='Move post it to the trash'
 				message='Are you sure you want to move this post it to the trash?'
 			/>
-			<PostIt />
 		</section>
 	);
 }

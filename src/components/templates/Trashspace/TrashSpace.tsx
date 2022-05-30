@@ -3,10 +3,9 @@ import Button from 'components/atoms/Button/Button';
 import Header from 'components/organisms/Header/Header';
 import { Link } from 'react-router-dom';
 import Modal from 'components/molecules/Modal/Modal';
-import PostIt from 'components/atoms/PostIt/PostIt';
 import restorePostIt from 'assets/icons/restorePostIt.png';
 import emptyTrashBin from 'assets/icons/emptyTrashBin.png';
-import './TrashSpace.css';
+import PostItList from 'components/molecules/PostItList/PostItList';
 
 export default function TrashSpace() {
 	return (
@@ -29,26 +28,14 @@ export default function TrashSpace() {
 					<span>Back to workspace </span>
 				</Link>
 			</Header>
-			<main className='container'>
-				<PostIt />
-				<PostIt />
-				<PostIt />
-				<PostIt />
-				<PostIt />
-				<PostIt />
-				<PostIt />
-				<PostIt />
-				<PostIt />
-				<PostIt />
-				<PostIt />
-				<PostIt />
-				<PostIt />
-				<PostIt />
-				<PostIt />
-				<PostIt />
-				<PostIt />
-				<PostIt />
-			</main>
+
+			<PostItList
+				postItListVariant='postItListDeleted'
+				postItVariant='postItDeleted'
+				draggable={false}
+				disabled
+			/>
+
 			<Modal
 				title='Delete Post It Note'
 				message='Are you sure you want to delete this post it permanently?'

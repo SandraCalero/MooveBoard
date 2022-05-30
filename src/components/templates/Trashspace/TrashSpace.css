@@ -1,9 +1,0 @@
-.container {
-	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
-	gap: 1rem;
-	max-height: calc(100% - 15.3rem);
-	overflow-y: scroll;
-	justify-items: center;
-	align-items: center;
-}

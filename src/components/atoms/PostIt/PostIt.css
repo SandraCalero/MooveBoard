@@ -7,9 +7,6 @@
 	justify-content: center;
 	background-color: var(--yellow);
 	margin: 0.2rem 0;
-	position: absolute;
-	/* Quitar position absolute cuando está en la trash bin */
-	cursor: -webkit-grab;
 	box-shadow: var(--box-shadow);
 }
 
@@ -25,4 +22,21 @@
 
 .postItContainer .note:active {
 	cursor: -webkit-grab;
+}
+
+.postItContainer.postItDeleted .note {
+	resize: none;
+}
+
+@media (min-width: 769px) {
+	.postItContainer.postItCreated {
+		position: absolute;
+		cursor: -webkit-grab;
+	}
+}
+
+@media (max-width: 768px) {
+	.postItContainer.postItCreated .note {
+		resize: vertical;
+	}
 }
