@@ -3,8 +3,8 @@ import './PostItList.css';
 
 interface PostItListProps {
 	postItVariant: string;
-	draggable: boolean;
-	disabled: boolean;
+	draggable?: boolean;
+	disabled?: boolean;
 	postItListVariant?: string;
 }
 
@@ -57,5 +57,7 @@ function PostItList({
 
 PostItList.defaultProps = {
 	postItListVariant: '',
+	draggable: false,
+	disabled: false,
 };
 export default PostItList;

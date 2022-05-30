@@ -5,8 +5,8 @@ interface PostItProps {
 	id: string;
 	content?: string;
 	variant: string;
-	draggable: boolean;
-	disabled: boolean;
+	draggable?: boolean;
+	disabled?: boolean;
 }
 
 function PostIt({ id, content, variant, draggable, disabled }: PostItProps) {
@@ -67,6 +67,8 @@ function PostIt({ id, content, variant, draggable, disabled }: PostItProps) {
 
 PostIt.defaultProps = {
 	content: '',
+	draggable: false,
+	disabled: false,
 };
 
 export default PostIt;

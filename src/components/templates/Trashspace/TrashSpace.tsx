@@ -32,7 +32,6 @@ export default function TrashSpace() {
 			<PostItList
 				postItListVariant='postItListDeleted'
 				postItVariant='postItDeleted'
-				draggable={false}
 				disabled
 			/>
 

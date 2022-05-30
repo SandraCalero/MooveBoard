@@ -16,7 +16,7 @@ export default function WorkSpace() {
 				/>
 				<TrashBinLink />
 			</Header>
-			<PostItList disabled={false} postItVariant='postItCreated' draggable />
+			<PostItList postItVariant='postItCreated' draggable />
 			<Modal
 				title='Move post it to the trash'
 				message='Are you sure you want to move this post it to the trash?'
