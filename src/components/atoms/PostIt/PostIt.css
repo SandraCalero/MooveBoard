@@ -1,15 +1,16 @@
-.dragNote {
+/* Post It base
+   ============================= */
+
+.postItContainer {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background-color: yellow;
+	background-color: var(--yellow);
 	margin: 0.2rem 0;
-	position: absolute;
-	cursor: -webkit-grab;
-	box-shadow: 0.5rem 0.5rem 1.5rem 0 rgba(0, 0, 0, 0.2);
+	box-shadow: var(--box-shadow);
 }
 
-.note {
+.postItContainer .note {
 	padding: 16px;
 	height: 20rem;
 	width: 20rem;
@@ -19,6 +20,23 @@
 	border: none;
 }
 
-.note:active {
+.postItContainer .note:active {
 	cursor: -webkit-grab;
+}
+
+.postItContainer.postItDeleted .note {
+	resize: none;
+}
+
+@media (min-width: 769px) {
+	.postItContainer.postItCreated {
+		position: absolute;
+		cursor: -webkit-grab;
+	}
+}
+
+@media (max-width: 768px) {
+	.postItContainer.postItCreated .note {
+		resize: vertical;
+	}
 }

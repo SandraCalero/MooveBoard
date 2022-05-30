@@ -10,8 +10,8 @@ interface ButtonProps {
 function Button({ text, variant, icon, altText }: ButtonProps) {
 	return (
 		<button name='button' type='button' className={`button ${variant}`}>
-			{text}
 			{icon && <img src={icon} alt={altText} />}
+			{text}
 		</button>
 	);
 }

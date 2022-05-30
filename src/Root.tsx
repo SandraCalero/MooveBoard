@@ -7,7 +7,7 @@ export default function Root() {
 		<BrowserRouter>
 			<Routes>
 				<Route path='/' element={<WorkSpace />} />
-				<Route path='/trashspace' element={<TrashSpace />} />
+				<Route path='/trashbin' element={<TrashSpace />} />
 			</Routes>
 		</BrowserRouter>
 	);

@@ -1,6 +1,9 @@
+/* Header base
+   ============================= */
+
 .header {
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-around;
 	align-items: center;
-	padding: 1.6rem;
+	padding: var(--padding-regular);
 }

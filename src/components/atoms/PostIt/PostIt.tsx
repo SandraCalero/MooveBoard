@@ -1,11 +1,16 @@
 import { DragEvent, useState } from 'react';
 import './PostIt.css';
 
-export default function PostIt() {
-	const [stylePostIt, setStylePostIt] = useState({
-		left: '15rem',
-		top: '15rem',
-	});
+interface PostItProps {
+	id: string;
+	content?: string;
+	variant: string;
+	draggable?: boolean;
+	disabled?: boolean;
+}
+
+function PostIt({ id, content, variant, draggable, disabled }: PostItProps) {
+	const [stylePostIt, setStylePostIt] = useState({});
 
 	const handleDrag = (event: DragEvent<HTMLDivElement>) => {
 		event.stopPropagation();
@@ -30,25 +35,40 @@ export default function PostIt() {
 		setStylePostIt(newPostItPosition);
 	};
 
+	const handleOnContextMenu = () => {
+		console.log('Click derecho');
+	};
+
 	return (
 		<div
-			className='dragNote'
+			className={`postItContainer ${variant}`}
 			style={stylePostIt}
-			draggable='true'
-			id='dragtarget'
+			draggable={draggable}
+			id={id}
 			onDragStart={() => console.log('DragStart')}
 			onDragOver={(event) => console.log(event)}
 			onDrag={handleDrag}
 			onDragEnd={handleDragEnd}
+			onContextMenu={handleOnContextMenu}
 		>
 			<textarea
 				onChange={(event) => console.log(event.target.value)}
+				disabled={disabled}
 				className='note'
-				draggable='true'
+				draggable={draggable}
 				name='note'
 				id='note'
-				wrap='physical'
-			/>
+			>
+				{content}
+			</textarea>
 		</div>
 	);
 }
+
+PostIt.defaultProps = {
+	content: '',
+	draggable: false,
+	disabled: false,
+};
+
+export default PostIt;
