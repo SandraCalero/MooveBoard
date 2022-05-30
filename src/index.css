@@ -172,7 +172,7 @@ template {
 	--font-size-regular: 1.6rem;
 	--font-color: var(--black);
 
-	/* Efects */
+	/* Animations */
 	--hover-opacity: 0.9;
 	--click-button-transform: translateY(0.4rem);
 
