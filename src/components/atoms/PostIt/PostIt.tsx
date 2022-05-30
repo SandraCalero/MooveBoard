@@ -1,22 +1,19 @@
 import { DragEvent, useState } from 'react';
 import './PostIt.css';
 
-export default function PostIt() {
-	const [stylePostIt, setStylePostIt] = useState({
-		left: '15rem',
-		top: '15rem',
-	});
+interface PostItProps {
+	id: string;
+	content?: string;
+	variant: string;
+	draggable?: boolean;
+	disabled?: boolean;
+}
 
-	const handleDragStart = (event: DragEvent<HTMLDivElement>) => {
-		/* const target = event.target as HTMLDivElement; */
-		event.dataTransfer.setData('data', 'dataItem');
-		event.stopPropagation();
-	};
+function PostIt({ id, content, variant, draggable, disabled }: PostItProps) {
+	const [stylePostIt, setStylePostIt] = useState({});
 
 	const handleDrag = (event: DragEvent<HTMLDivElement>) => {
 		event.stopPropagation();
-		/* 		const target = event.target as HTMLDivElement;
-		target.style.zIndex += 1; */
 	};
 
 	const handleDragEnd = (event: DragEvent<HTMLDivElement>) => {
@@ -37,37 +34,41 @@ export default function PostIt() {
 
 		setStylePostIt(newPostItPosition);
 	};
-	/* 
-	const handleDoubleClick = () => {
-		const element = document.getElementById('dragtarget');
-		if (element && !element.hasChildNodes()) {
-			const note = document.createElement('input');
-			note.type = 'text';
-			note.className = 'note';
-			element.appendChild(note);
-		}
-	}; */
+
+	const handleOnContextMenu = () => {
+		console.log('Click derecho');
+	};
 
 	return (
 		<div
-			className='dragNote'
+			className={`postItContainer ${variant}`}
 			style={stylePostIt}
-			draggable='true'
-			id='dragtarget'
-			onDragStart={handleDragStart}
-			onDragOver={(event) => {
-				event.preventDefault();
-			}}
+			draggable={draggable}
+			id={id}
+			onDragStart={() => console.log('DragStart')}
+			onDragOver={(event) => console.log(event)}
 			onDrag={handleDrag}
 			onDragEnd={handleDragEnd}
+			onContextMenu={handleOnContextMenu}
 		>
 			<textarea
+				onChange={(event) => console.log(event.target.value)}
+				disabled={disabled}
 				className='note'
-				draggable='true'
+				draggable={draggable}
 				name='note'
 				id='note'
-				wrap='physical'
-			/>
+			>
+				{content}
+			</textarea>
 		</div>
 	);
 }
+
+PostIt.defaultProps = {
+	content: '',
+	draggable: false,
+	disabled: false,
+};
+
+export default PostIt;

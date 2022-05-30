@@ -1,5 +1,10 @@
 {
 	"compilerOptions": {
+		"paths": {
+			"assets/*": ["assets/*"],
+			"components/*": ["components/*"],
+			"styles/*": ["styles/*"]
+		},
 		"target": "es5",
 		"lib": ["dom", "dom.iterable", "esnext"],
 		"allowJs": true,
@@ -16,7 +21,7 @@
 		"noEmit": true,
 		"jsx": "react-jsx",
 		"baseUrl": "src",
-		"typeRoots": ["./node_modules/@types"]
+		"typeRoots": ["./node_modules/@types", "src/types/svg"]
 	},
 	"include": ["src"]
 }
