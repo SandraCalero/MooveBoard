@@ -1,5 +1,5 @@
 /* eslint-disable no-param-reassign */
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface PostItProps {
 	id: number;
@@ -14,9 +14,12 @@ interface workspaceStateProps {
 	postItList: Array<PostItProps>;
 }
 
+const local = localStorage.getItem('postItList');
+const postItList: Array<PostItProps> = local ? JSON.parse(local) : [];
+
 const initialState: workspaceStateProps = {
 	currentPostItId: 0,
-	postItList: [],
+	postItList,
 };
 
 const workspaceSlice = createSlice({
@@ -31,17 +34,18 @@ const workspaceSlice = createSlice({
 				variant: 'postItCreated',
 				draggable: true,
 			});
+			localStorage.setItem('postItList', JSON.stringify(state.postItList));
 		},
 		sendToTrash: (state, action) => {
 			console.log('Send to trash', state, action.payload);
 		},
-		editPostIt(state, action) {
-			console.log('Action ID', action.payload.id, typeof action.payload.id);
-			console.log('State', state.postItList[0]);
-			const postItToEdit = state.postItList.filter(
-				(postItItem) => postItItem.id.toString === action.payload.id
-			);
-			console.log('Edit Post it', postItToEdit);
+		editPostIt(state, action: PayloadAction<PostItProps>) {
+			state.postItList.forEach((postIt) => {
+				if (postIt.id === action.payload.id) {
+					postIt.content = action.payload.content;
+				}
+			});
+			localStorage.setItem('postItList', JSON.stringify(state.postItList));
 		},
 	},
 });

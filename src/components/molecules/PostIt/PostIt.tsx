@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { editPostIt } from 'redux/slices/workspace';
 import './PostIt.css';
@@ -15,6 +16,7 @@ function PostIt({ id, content, variant, draggable, disabled }: PostItProps) {
 	const { stylePostIt, handleDrag, handleDragEnd, handleOnContextMenu } =
 		usePostIt();
 	const dispatch = useDispatch();
+	const [state, setState] = useState(content);
 
 	return (
 		<div
@@ -29,20 +31,15 @@ function PostIt({ id, content, variant, draggable, disabled }: PostItProps) {
 		>
 			<textarea
 				onChange={(event) => {
-					event.preventDefault();
-					event.stopPropagation();
-					const payload = {
-						id: event.target.id,
-						content: event.target.value,
-					};
-					dispatch(editPostIt(payload));
+					setState(event.target.value);
 				}}
+				onBlur={() => dispatch(editPostIt({ id, content: state, variant }))}
 				disabled={disabled}
 				className='note'
 				draggable={draggable}
 				name='note'
 				id={id.toString()}
-				value={content}
+				value={state}
 			/>
 		</div>
 	);

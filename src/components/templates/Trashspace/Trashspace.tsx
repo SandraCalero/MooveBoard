@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import Modal from 'components/molecules/Modal/Modal';
 import restorePostIt from 'assets/icons/restorePostIt.png';
 import emptyTrashBin from 'assets/icons/emptyTrashBin.png';
-import PostItList from 'components/molecules/PostItList/PostItList';
+import PostItList from 'components/organisms/PostItList/PostItList';
 import { useDispatch, useSelector } from 'react-redux';
 import { cleanTrashBin, restoreAllPostIts } from 'redux/slices/trashspace';
 import { RootState } from 'redux/store';

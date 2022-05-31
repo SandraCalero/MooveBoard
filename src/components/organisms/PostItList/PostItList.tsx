@@ -1,4 +1,4 @@
-import PostIt from 'components/atoms/PostIt/PostIt';
+import PostIt from 'components/molecules/PostIt/PostIt';
 import './PostItList.css';
 
 interface PostItProps {

@@ -3,7 +3,7 @@ import Modal from 'components/molecules/Modal/Modal';
 import TrashBinLink from 'components/molecules/TrashBinLink/TrashBinLink';
 import Header from 'components/organisms/Header/Header';
 import newPostIt from 'assets/icons/newPostIt.png';
-import PostItList from 'components/molecules/PostItList/PostItList';
+import PostItList from 'components/organisms/PostItList/PostItList';
 import { useDispatch, useSelector } from 'react-redux';
 import { createPostIt } from 'redux/slices/workspace';
 import { RootState } from 'redux/store';
