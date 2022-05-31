@@ -1,3 +1,4 @@
+import { MouseEventHandler } from 'react';
 import './Button.css';
 
 interface ButtonProps {
@@ -5,11 +6,17 @@ interface ButtonProps {
 	icon?: string;
 	variant: string;
 	altText?: string;
+	onClick: MouseEventHandler<HTMLButtonElement>;
 }
 
-function Button({ text, variant, icon, altText }: ButtonProps) {
+function Button({ text, variant, icon, altText, onClick }: ButtonProps) {
 	return (
-		<button name='button' type='button' className={`button ${variant}`}>
+		<button
+			name='button'
+			type='button'
+			className={`button ${variant}`}
+			onClick={onClick}
+		>
 			{icon && <img src={icon} alt={altText} />}
 			{text}
 		</button>

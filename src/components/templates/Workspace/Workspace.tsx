@@ -4,8 +4,15 @@ import TrashBinLink from 'components/molecules/TrashBinLink/TrashBinLink';
 import Header from 'components/organisms/Header/Header';
 import newPostIt from 'assets/icons/newPostIt.png';
 import PostItList from 'components/molecules/PostItList/PostItList';
+import { useDispatch, useSelector } from 'react-redux';
+import { createPostIt } from 'redux/slices/workspace';
+import { RootState } from 'redux/store';
 
-export default function WorkSpace() {
+export default function Workspace() {
+	const dispatch = useDispatch();
+	const postItList = useSelector(
+		(state: RootState) => state.workspace.postItList
+	);
 	return (
 		<section>
 			<Header>
@@ -13,10 +20,13 @@ export default function WorkSpace() {
 					variant='newPostItButton'
 					icon={newPostIt}
 					altText='Create new Post It'
+					onClick={() => {
+						dispatch(createPostIt());
+					}}
 				/>
 				<TrashBinLink />
 			</Header>
-			<PostItList postItVariant='postItCreated' draggable />
+			<PostItList postItList={postItList} />
 			<Modal
 				title='Move post it to the trash'
 				message='Are you sure you want to move this post it to the trash?'

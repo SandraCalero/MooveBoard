@@ -21,8 +21,16 @@ export default function Modal({ title, message }: ModalProps) {
 				</div>
 
 				<div className='divModalButtons'>
-					<Button variant='cancelButton' text='Cancel' />
-					<Button variant='confirmButton' text='Confirm' />
+					<Button
+						variant='cancelButton'
+						text='Cancel'
+						onClick={() => console.log('Click Modal Cancel')}
+					/>
+					<Button
+						variant='confirmButton'
+						text='Confirm'
+						onClick={() => console.log('Click Modal Confirm')}
+					/>
 				</div>
 			</div>
 		</div>

@@ -6,8 +6,16 @@ import Modal from 'components/molecules/Modal/Modal';
 import restorePostIt from 'assets/icons/restorePostIt.png';
 import emptyTrashBin from 'assets/icons/emptyTrashBin.png';
 import PostItList from 'components/molecules/PostItList/PostItList';
+import { useDispatch, useSelector } from 'react-redux';
+import { cleanTrashBin, restoreAllPostIts } from 'redux/slices/trashspace';
+import { RootState } from 'redux/store';
 
-export default function TrashSpace() {
+export default function Trashspace() {
+	const dispatch = useDispatch();
+	const postItListDeleted = useSelector(
+		(state: RootState) => state.trashspace.postItListDeleted
+	);
+
 	return (
 		<section>
 			<Header>
@@ -16,12 +24,14 @@ export default function TrashSpace() {
 					text='Empty trash bin'
 					icon={emptyTrashBin}
 					altText='Empty trash bin'
+					onClick={() => dispatch(cleanTrashBin())}
 				/>
 				<Button
 					variant='restorePostIts'
 					text='Restore all post-its'
 					icon={restorePostIt}
 					altText='Restore all post-its'
+					onClick={() => dispatch(restoreAllPostIts())}
 				/>
 				<Link to='/' className='link'>
 					<img src={backToWorkspace} alt='Trash bin' />
@@ -31,8 +41,7 @@ export default function TrashSpace() {
 
 			<PostItList
 				postItListVariant='postItListDeleted'
-				postItVariant='postItDeleted'
-				disabled
+				postItList={postItListDeleted}
 			/>
 
 			<Modal
