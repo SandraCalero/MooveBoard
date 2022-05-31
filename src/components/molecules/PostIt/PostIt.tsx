@@ -1,6 +1,4 @@
-import { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { editPostIt } from 'redux/slices/workspace';
+import Button from 'components/atoms/Button/Button';
 import './PostIt.css';
 import { usePostIt } from './usePostIt';
 
@@ -13,10 +11,19 @@ interface PostItProps {
 }
 
 function PostIt({ id, content, variant, draggable, disabled }: PostItProps) {
-	const { stylePostIt, handleDrag, handleDragEnd, handleOnContextMenu } =
-		usePostIt();
-	const dispatch = useDispatch();
-	const [state, setState] = useState(content);
+	const {
+		text,
+		disabledTextArea,
+		stylePostIt,
+		handleDragStart,
+		handleDrag,
+		handleDragEnd,
+		handleOnContextMenu,
+		handleDoubleClick,
+		handleChange,
+		handleBlur,
+		handleClosePostItClick,
+	} = usePostIt({ id, disabled, variant, content });
 
 	return (
 		<div
@@ -24,22 +31,20 @@ function PostIt({ id, content, variant, draggable, disabled }: PostItProps) {
 			style={stylePostIt}
 			draggable={draggable}
 			id={id.toString()}
-			onDragStart={() => console.log('DragStart')}
+			onDragStart={handleDragStart}
 			onDrag={handleDrag}
 			onDragEnd={handleDragEnd}
 			onContextMenu={handleOnContextMenu}
+			onDoubleClick={handleDoubleClick}
 		>
+			<Button variant='closePostIt' onClick={handleClosePostItClick} text='X' />
 			<textarea
-				onChange={(event) => {
-					setState(event.target.value);
-				}}
-				onBlur={() => dispatch(editPostIt({ id, content: state, variant }))}
-				disabled={disabled}
+				onChange={handleChange}
+				onBlur={handleBlur}
+				disabled={disabledTextArea}
 				className='note'
-				draggable={draggable}
 				name='note'
-				id={id.toString()}
-				value={state}
+				value={text}
 			/>
 		</div>
 	);
@@ -48,7 +53,7 @@ function PostIt({ id, content, variant, draggable, disabled }: PostItProps) {
 PostIt.defaultProps = {
 	content: '',
 	draggable: false,
-	disabled: false,
+	disabled: true,
 };
 
 export default PostIt;

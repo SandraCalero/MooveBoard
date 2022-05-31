@@ -14,11 +14,18 @@ interface workspaceStateProps {
 	postItList: Array<PostItProps>;
 }
 
-const local = localStorage.getItem('postItList');
-const postItList: Array<PostItProps> = local ? JSON.parse(local) : [];
+const localPostItList = localStorage.getItem('postItList');
+const localCurrentPostItId = localStorage.getItem('currentPostItId');
+
+const postItList: Array<PostItProps> = localPostItList
+	? JSON.parse(localPostItList)
+	: [];
+const currentPostItId: number = localCurrentPostItId
+	? JSON.parse(localCurrentPostItId)
+	: 0;
 
 const initialState: workspaceStateProps = {
-	currentPostItId: 0,
+	currentPostItId,
 	postItList,
 };
 
@@ -35,6 +42,10 @@ const workspaceSlice = createSlice({
 				draggable: true,
 			});
 			localStorage.setItem('postItList', JSON.stringify(state.postItList));
+			localStorage.setItem(
+				'currentPostItId',
+				JSON.stringify(state.currentPostItId)
+			);
 		},
 		sendToTrash: (state, action) => {
 			console.log('Send to trash', state, action.payload);

@@ -1,7 +1,24 @@
-import { DragEvent, useState } from 'react';
+import { ChangeEvent, DragEvent, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { editPostIt, sendToTrash } from 'redux/slices/workspace';
 
-export const usePostIt = () => {
+interface PostItProps {
+	id: number;
+	content?: string;
+	variant: string;
+	draggable?: boolean;
+	disabled?: boolean;
+}
+
+export const usePostIt = ({ id, content, disabled, variant }: PostItProps) => {
+	const dispatch = useDispatch();
+
+	/* States */
 	const [stylePostIt, setStylePostIt] = useState({});
+	const [text, setText] = useState(content);
+	const [disabledTextArea, setDisabledTextArea] = useState(disabled);
+
+	const handleDragStart = () => console.log('DragStart');
 
 	const handleDrag = (event: DragEvent<HTMLDivElement>) => {
 		event.stopPropagation();
@@ -30,11 +47,41 @@ export const usePostIt = () => {
 		console.log('Click derecho');
 	};
 
+	const handleChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
+		setText(event.target.value);
+	};
+
+	const handleDoubleClick = () => {
+		setDisabledTextArea(false);
+	};
+
+	const handleBlur = () => {
+		setDisabledTextArea(true);
+		dispatch(
+			editPostIt({
+				id,
+				content: text,
+				variant,
+			})
+		);
+	};
+
+	const handleClosePostItClick = () => {
+		dispatch(sendToTrash(id)); /* Debería abrir el modal */
+	};
+
 	return {
+		text,
+		disabledTextArea,
 		stylePostIt,
+		handleDragStart,
 		handleDrag,
 		handleDragEnd,
 		handleOnContextMenu,
+		handleDoubleClick,
+		handleChange,
+		handleBlur,
+		handleClosePostItClick,
 	};
 };
 
