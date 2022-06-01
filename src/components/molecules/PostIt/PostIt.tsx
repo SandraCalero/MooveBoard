@@ -1,4 +1,5 @@
 import Button from 'components/atoms/Button/Button';
+import { MouseEventHandler } from 'react';
 import './PostIt.css';
 import { usePostIt } from './usePostIt';
 
@@ -8,9 +9,17 @@ interface PostItProps {
 	variant: string;
 	draggable?: boolean;
 	disabled?: boolean;
+	openModal: (postId: number) => void;
 }
 
-function PostIt({ id, content, variant, draggable, disabled }: PostItProps) {
+function PostIt({
+	id,
+	content,
+	variant,
+	draggable,
+	disabled,
+	openModal,
+}: PostItProps) {
 	const {
 		text,
 		disabledTextArea,
@@ -22,7 +31,6 @@ function PostIt({ id, content, variant, draggable, disabled }: PostItProps) {
 		handleDoubleClick,
 		handleChange,
 		handleBlur,
-		handleClosePostItClick,
 	} = usePostIt({ id, disabled, variant, content });
 
 	return (
@@ -37,7 +45,7 @@ function PostIt({ id, content, variant, draggable, disabled }: PostItProps) {
 			onContextMenu={handleOnContextMenu}
 			onDoubleClick={handleDoubleClick}
 		>
-			<Button variant='closePostIt' onClick={handleClosePostItClick} text='X' />
+			<Button variant='closePostIt' onClick={() => openModal(id)} text='X' />
 			<textarea
 				onChange={handleChange}
 				onBlur={handleBlur}

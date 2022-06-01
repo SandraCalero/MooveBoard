@@ -2,7 +2,6 @@ import backToWorkspace from 'assets/icons/backToWorkspace.png';
 import Button from 'components/atoms/Button/Button';
 import Header from 'components/organisms/Header/Header';
 import { Link } from 'react-router-dom';
-import Modal from 'components/molecules/Modal/Modal';
 import restorePostIt from 'assets/icons/restorePostIt.png';
 import emptyTrashBin from 'assets/icons/emptyTrashBin.png';
 import PostItList from 'components/organisms/PostItList/PostItList';
@@ -42,11 +41,6 @@ export default function Trashspace() {
 			<PostItList
 				postItListVariant='postItListDeleted'
 				postItList={postItListDeleted}
-			/>
-
-			<Modal
-				title='Delete Post It Note'
-				message='Are you sure you want to delete this post it permanently?'
 			/>
 		</section>
 	);

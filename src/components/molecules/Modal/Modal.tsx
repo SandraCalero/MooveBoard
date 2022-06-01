@@ -1,18 +1,28 @@
 import warning from 'assets/icons/warning.png';
 import Button from 'components/atoms/Button/Button';
+import { MouseEventHandler } from 'react';
 import './Modal.css';
+import { useModal } from './useModal';
 
 interface ModalProps {
 	title: string;
 	message: string;
+	isModalOpen: boolean;
+	onConfirm: MouseEventHandler<HTMLButtonElement>;
+	onCancel: MouseEventHandler<HTMLButtonElement>;
 }
 
-export default function Modal({ title, message }: ModalProps) {
-	/* const wrapperClass = classNames('glass', {
-		show: isConfirmationOpen,
-	}); */
+export default function Modal({
+	isModalOpen,
+	message,
+	title,
+	onConfirm,
+	onCancel,
+}: ModalProps) {
+	const { wrapperClass } = useModal({ isModalOpen });
+
 	return (
-		<div className='glass'>
+		<div className={wrapperClass}>
 			<div className='modal'>
 				<h2 className='modalTitle'>{title}</h2>
 				<div className='modalMessage'>
@@ -21,16 +31,8 @@ export default function Modal({ title, message }: ModalProps) {
 				</div>
 
 				<div className='divModalButtons'>
-					<Button
-						variant='cancelButton'
-						text='Cancel'
-						onClick={() => console.log('Click Modal Cancel')}
-					/>
-					<Button
-						variant='confirmButton'
-						text='Confirm'
-						onClick={() => console.log('Click Modal Confirm')}
-					/>
+					<Button variant='cancelButton' text='Cancel' onClick={onCancel} />
+					<Button variant='confirmButton' text='Confirm' onClick={onConfirm} />
 				</div>
 			</div>
 		</div>

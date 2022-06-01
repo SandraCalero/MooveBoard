@@ -1,6 +1,6 @@
 import { ChangeEvent, DragEvent, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { editPostIt, sendToTrash } from 'redux/slices/workspace';
+import { editPostIt } from 'redux/slices/workspace';
 
 interface PostItProps {
 	id: number;
@@ -66,10 +66,6 @@ export const usePostIt = ({ id, content, disabled, variant }: PostItProps) => {
 		);
 	};
 
-	const handleClosePostItClick = () => {
-		dispatch(sendToTrash(id)); /* Debería abrir el modal */
-	};
-
 	return {
 		text,
 		disabledTextArea,
@@ -81,7 +77,6 @@ export const usePostIt = ({ id, content, disabled, variant }: PostItProps) => {
 		handleDoubleClick,
 		handleChange,
 		handleBlur,
-		handleClosePostItClick,
 	};
 };
 

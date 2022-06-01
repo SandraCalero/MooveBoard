@@ -47,8 +47,12 @@ const workspaceSlice = createSlice({
 				JSON.stringify(state.currentPostItId)
 			);
 		},
-		sendToTrash: (state, action) => {
-			console.log('Send to trash', state, action.payload);
+		sendToTrash: (state, action: PayloadAction<{ id: number }>) => {
+			const postItIndex = state.postItList.findIndex(
+				(postIt) => postIt.id === action.payload.id
+			);
+			state.postItList.splice(postItIndex, 1);
+			localStorage.setItem('postItList', JSON.stringify(state.postItList));
 		},
 		editPostIt(state, action: PayloadAction<PostItProps>) {
 			state.postItList.forEach((postIt) => {
