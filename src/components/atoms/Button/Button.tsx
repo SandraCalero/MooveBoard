@@ -1,4 +1,3 @@
-import { MouseEventHandler } from 'react';
 import './Button.css';
 
 interface ButtonProps {
@@ -6,7 +5,7 @@ interface ButtonProps {
 	icon?: string;
 	variant: string;
 	altText?: string;
-	onClick: MouseEventHandler<HTMLButtonElement>;
+	onClick: () => void;
 }
 
 function Button({ text, variant, icon, altText, onClick }: ButtonProps) {

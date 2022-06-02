@@ -1,22 +1,20 @@
+import { IPostItEditableWithEvent } from 'globals/definitions/postItProps';
 import { ChangeEvent, DragEvent, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { editPostIt } from 'redux/slices/workspace';
 
-interface PostItProps {
-	id: number;
-	content?: string;
-	variant: string;
-	draggable?: boolean;
-	disabled?: boolean;
-}
-
-export const usePostIt = ({ id, content, disabled, variant }: PostItProps) => {
+export const usePostIt = ({
+	id,
+	content,
+	disabled,
+	shouldOpenModal,
+}: IPostItEditableWithEvent) => {
 	const dispatch = useDispatch();
 
 	/* States */
 	const [stylePostIt, setStylePostIt] = useState({});
-	const [text, setText] = useState(content);
-	const [disabledTextArea, setDisabledTextArea] = useState(disabled);
+	const [newContent, setNewContent] = useState(content);
+	const [isDisabled, setIsDisabled] = useState(disabled);
 
 	const handleDragStart = () => console.log('DragStart');
 
@@ -48,35 +46,37 @@ export const usePostIt = ({ id, content, disabled, variant }: PostItProps) => {
 	};
 
 	const handleChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
-		setText(event.target.value);
+		setNewContent(event.target.value);
 	};
 
-	const handleDoubleClick = () => {
-		setDisabledTextArea(false);
+	const handleClick = () => {
+		setIsDisabled(false);
 	};
 
 	const handleBlur = () => {
-		setDisabledTextArea(true);
+		setIsDisabled(true);
 		dispatch(
 			editPostIt({
 				id,
-				content: text,
-				variant,
+				content: newContent,
 			})
 		);
 	};
 
+	const handleClose = () => shouldOpenModal({ id, content });
+
 	return {
-		text,
-		disabledTextArea,
+		newContent,
+		isDisabled,
 		stylePostIt,
 		handleDragStart,
 		handleDrag,
 		handleDragEnd,
 		handleOnContextMenu,
-		handleDoubleClick,
+		handleClose,
 		handleChange,
 		handleBlur,
+		handleClick,
 	};
 };
 

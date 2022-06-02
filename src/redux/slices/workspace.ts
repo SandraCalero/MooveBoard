@@ -1,23 +1,18 @@
 /* eslint-disable no-param-reassign */
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { IPostIt, IPostItEditable } from 'globals/definitions/postItProps';
 
-interface PostItProps {
-	id: number;
-	variant: string;
-	content?: string;
-	draggable?: boolean;
-	disabled?: boolean;
-}
+type PostItId = Pick<IPostIt, 'id'>;
 
 interface workspaceStateProps {
 	currentPostItId: number;
-	postItList: Array<PostItProps>;
+	postItList: Array<IPostItEditable>;
 }
 
 const localPostItList = localStorage.getItem('postItList');
 const localCurrentPostItId = localStorage.getItem('currentPostItId');
 
-const postItList: Array<PostItProps> = localPostItList
+const postItList: Array<IPostItEditable> = localPostItList
 	? JSON.parse(localPostItList)
 	: [];
 const currentPostItId: number = localCurrentPostItId
@@ -35,11 +30,10 @@ const workspaceSlice = createSlice({
 	reducers: {
 		createPostIt: (state) => {
 			state.currentPostItId += 1;
-			state.postItList.push({
+			state.postItList.unshift({
 				id: state.currentPostItId,
 				content: '',
-				variant: 'postItCreated',
-				draggable: true,
+				disabled: true,
 			});
 			localStorage.setItem('postItList', JSON.stringify(state.postItList));
 			localStorage.setItem(
@@ -47,14 +41,14 @@ const workspaceSlice = createSlice({
 				JSON.stringify(state.currentPostItId)
 			);
 		},
-		sendToTrash: (state, action: PayloadAction<{ id: number }>) => {
+		moveToTrash: (state, action: PayloadAction<PostItId>) => {
 			const postItIndex = state.postItList.findIndex(
 				(postIt) => postIt.id === action.payload.id
 			);
 			state.postItList.splice(postItIndex, 1);
 			localStorage.setItem('postItList', JSON.stringify(state.postItList));
 		},
-		editPostIt(state, action: PayloadAction<PostItProps>) {
+		editPostIt(state, action: PayloadAction<IPostIt>) {
 			state.postItList.forEach((postIt) => {
 				if (postIt.id === action.payload.id) {
 					postIt.content = action.payload.content;
@@ -65,6 +59,6 @@ const workspaceSlice = createSlice({
 	},
 });
 
-export const { createPostIt, sendToTrash, editPostIt } = workspaceSlice.actions;
+export const { createPostIt, moveToTrash, editPostIt } = workspaceSlice.actions;
 
 export default workspaceSlice.reducer;

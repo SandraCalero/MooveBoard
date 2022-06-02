@@ -1,6 +1,5 @@
 import warning from 'assets/icons/warning.png';
 import Button from 'components/atoms/Button/Button';
-import { MouseEventHandler } from 'react';
 import './Modal.css';
 import { useModal } from './useModal';
 
@@ -8,8 +7,8 @@ interface ModalProps {
 	title: string;
 	message: string;
 	isModalOpen: boolean;
-	onConfirm: MouseEventHandler<HTMLButtonElement>;
-	onCancel: MouseEventHandler<HTMLButtonElement>;
+	onConfirm: () => void;
+	onCancel: () => void;
 }
 
 export default function Modal({

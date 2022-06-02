@@ -1,49 +1,60 @@
-import { createSlice } from '@reduxjs/toolkit';
+/* eslint-disable no-param-reassign */
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { IPostIt } from 'globals/definitions/postItProps';
 
-interface PostItDeletedProps {
-	id: number;
-	variant: string;
-	content?: string;
-	draggable?: boolean;
-	disabled?: boolean;
+interface trashspaceStateProps {
+	deletedPostIts: Array<IPostIt>;
 }
 
-interface trashspaceProps {
-	postItListDeleted: Array<PostItDeletedProps>;
-}
+const localDeletedPostIts = localStorage.getItem('deletedPostIts');
 
-const initialState: trashspaceProps = {
-	postItListDeleted: [],
+const deletedPostIts: Array<IPostIt> = localDeletedPostIts
+	? JSON.parse(localDeletedPostIts)
+	: [];
+
+const initialState: trashspaceStateProps = {
+	deletedPostIts,
 };
 
 const trashspaceSlice = createSlice({
 	name: 'trashspace',
 	initialState,
 	reducers: {
-		addPostItToTrash: (state, action) => {
-			state.postItListDeleted.push({
+		addPostItToTrash: (state, action: PayloadAction<IPostIt>) => {
+			state.deletedPostIts.unshift({
 				id: action.payload.id,
-				variant: 'postItDeleted',
 				content: action.payload.content,
-				disabled: true,
 			});
+			localStorage.setItem(
+				'deletedPostIts',
+				JSON.stringify(state.deletedPostIts)
+			);
 		},
-		cleanTrashBin: (state) => {
-			console.log(state);
+		clearTrashBin: (state) => {
+			state.deletedPostIts = [];
+			localStorage.setItem(
+				'deletedPostIts',
+				JSON.stringify(state.deletedPostIts)
+			);
 		},
-		restoreAllPostIts: (state) => {
-			console.log(state);
+		restoreAllPostIts: (state, action: PayloadAction<trashspaceStateProps>) => {
+			console.log(state, action.payload);
 		},
-		deletePostIt: (state) => {
-			console.log(state);
+		deletePostIt: (state, action: PayloadAction<number>) => {
+			console.log(state, action.payload);
 		},
-		restorePostIt: (state) => {
-			console.log(state);
+		restorePostIt: (state, action: PayloadAction<IPostIt>) => {
+			console.log(state, action.payload);
 		},
 	},
 });
 
-export const { cleanTrashBin, restoreAllPostIts, deletePostIt, restorePostIt } =
-	trashspaceSlice.actions;
+export const {
+	addPostItToTrash,
+	clearTrashBin,
+	restoreAllPostIts,
+	deletePostIt,
+	restorePostIt,
+} = trashspaceSlice.actions;
 
 export default trashspaceSlice.reducer;

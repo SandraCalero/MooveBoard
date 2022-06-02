@@ -20,18 +20,3 @@
 	outline: none;
 	border: none;
 }
-
-@media (min-width: 769px) {
-	.postItContainer.postItCreated {
-		position: absolute;
-	}
-	.postItContainer.postItCreated .note:active {
-		cursor: -webkit-grab;
-	}
-}
-
-@media (max-width: 768px) {
-	.postItContainer.postItCreated .note {
-		resize: vertical;
-	}
-}

@@ -2,16 +2,20 @@ import Button from 'components/atoms/Button/Button';
 import TrashBinLink from 'components/molecules/TrashBinLink/TrashBinLink';
 import Header from 'components/organisms/Header/Header';
 import newPostIt from 'assets/icons/newPostIt.png';
-import PostItList from 'components/organisms/PostItList/PostItList';
-import { useDispatch, useSelector } from 'react-redux';
-import { createPostIt } from 'redux/slices/workspace';
-import { RootState } from 'redux/store';
+import PostItEditableList from 'components/organisms/PostItEditableList/PostItEditableList';
+import Modal from 'components/molecules/Modal/Modal';
+import useWorkspace from './useWorkspace';
 
 export default function Workspace() {
-	const dispatch = useDispatch();
-	const postItList = useSelector(
-		(state: RootState) => state.workspace.postItList
-	);
+	const {
+		isModalOpen,
+		movePostItToTrash,
+		shouldCloseModal,
+		shouldOpenModal,
+		handleCreatePostIt,
+		postItList,
+	} = useWorkspace();
+
 	return (
 		<section>
 			<Header>
@@ -19,13 +23,22 @@ export default function Workspace() {
 					variant='newPostItButton'
 					icon={newPostIt}
 					altText='Create new Post It'
-					onClick={() => {
-						dispatch(createPostIt());
-					}}
+					onClick={handleCreatePostIt}
 				/>
 				<TrashBinLink />
 			</Header>
-			<PostItList postItList={postItList} />
+			<h1>Workspace</h1>
+			<PostItEditableList
+				postItList={postItList}
+				shouldOpenModal={shouldOpenModal}
+			/>
+			<Modal
+				title='Move post it to the trash'
+				message='Are you sure you want to move this post it to the trash?'
+				isModalOpen={isModalOpen}
+				onConfirm={movePostItToTrash}
+				onCancel={shouldCloseModal}
+			/>
 		</section>
 	);
 }

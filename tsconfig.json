@@ -4,7 +4,8 @@
 			"assets/*": ["assets/*"],
 			"components/*": ["components/*"],
 			"redux/*": ["redux/*"],
-			"styles/*": ["styles/*"]
+			"styles/*": ["styles/*"],
+			"globals/*": ["globals/*"]
 		},
 		"target": "es5",
 		"lib": ["dom", "dom.iterable", "esnext"],

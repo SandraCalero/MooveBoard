@@ -1,67 +1,52 @@
 import Button from 'components/atoms/Button/Button';
-import { MouseEventHandler } from 'react';
-import './PostIt.css';
+import { IPostItEditableWithEvent } from 'globals/definitions/postItProps';
 import { usePostIt } from './usePostIt';
-
-interface PostItProps {
-	id: number;
-	content?: string;
-	variant: string;
-	draggable?: boolean;
-	disabled?: boolean;
-	openModal: (postId: number) => void;
-}
+import './PostIt.css';
 
 function PostIt({
 	id,
 	content,
-	variant,
-	draggable,
 	disabled,
-	openModal,
-}: PostItProps) {
+	shouldOpenModal,
+}: IPostItEditableWithEvent) {
 	const {
-		text,
-		disabledTextArea,
+		newContent,
+		isDisabled,
 		stylePostIt,
 		handleDragStart,
 		handleDrag,
 		handleDragEnd,
 		handleOnContextMenu,
-		handleDoubleClick,
+		handleClose,
 		handleChange,
 		handleBlur,
-	} = usePostIt({ id, disabled, variant, content });
+		handleClick,
+	} = usePostIt({ id, disabled, content, shouldOpenModal });
 
 	return (
 		<div
-			className={`postItContainer ${variant}`}
+			className='postItContainer postItCreated'
 			style={stylePostIt}
-			draggable={draggable}
+			draggable
 			id={id.toString()}
 			onDragStart={handleDragStart}
 			onDrag={handleDrag}
 			onDragEnd={handleDragEnd}
 			onContextMenu={handleOnContextMenu}
-			onDoubleClick={handleDoubleClick}
+			onClick={handleClick}
+			aria-hidden='true'
 		>
-			<Button variant='closePostIt' onClick={() => openModal(id)} text='X' />
+			<Button variant='closePostIt' onClick={handleClose} text='X' />
 			<textarea
 				onChange={handleChange}
 				onBlur={handleBlur}
-				disabled={disabledTextArea}
+				disabled={isDisabled}
 				className='note'
 				name='note'
-				value={text}
+				value={newContent}
 			/>
 		</div>
 	);
 }
-
-PostIt.defaultProps = {
-	content: '',
-	draggable: false,
-	disabled: true,
-};
 
 export default PostIt;
