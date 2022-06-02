@@ -37,9 +37,6 @@ const trashspaceSlice = createSlice({
 				JSON.stringify(state.deletedPostIts)
 			);
 		},
-		restoreAllPostIts: (state, action: PayloadAction<trashspaceStateProps>) => {
-			console.log(state, action.payload);
-		},
 		deletePostIt: (state, action: PayloadAction<number>) => {
 			console.log(state, action.payload);
 		},
@@ -49,12 +46,7 @@ const trashspaceSlice = createSlice({
 	},
 });
 
-export const {
-	addPostItToTrash,
-	clearTrashBin,
-	restoreAllPostIts,
-	deletePostIt,
-	restorePostIt,
-} = trashspaceSlice.actions;
+export const { addPostItToTrash, clearTrashBin, deletePostIt, restorePostIt } =
+	trashspaceSlice.actions;
 
 export default trashspaceSlice.reducer;

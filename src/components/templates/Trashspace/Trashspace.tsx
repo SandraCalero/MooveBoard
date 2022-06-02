@@ -33,7 +33,6 @@ export default function Trashspace() {
 					text='Restore all post-its'
 					icon={restorePostIt}
 					altText='Restore all post-its'
-					/* To do hacer que el work space lo reciba */
 					onClick={handleRestoreAll}
 				/>
 				<Link to='/' className='link'>
