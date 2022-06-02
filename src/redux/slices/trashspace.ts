@@ -38,7 +38,14 @@ const trashspaceSlice = createSlice({
 			);
 		},
 		deletePostIt: (state, action: PayloadAction<number>) => {
-			console.log(state, action.payload);
+			const postItIndex = state.deletedPostIts.findIndex(
+				(postIt) => postIt.id === action.payload
+			);
+			state.deletedPostIts.splice(postItIndex, 1);
+			localStorage.setItem(
+				'deletedPostIts',
+				JSON.stringify(state.deletedPostIts)
+			);
 		},
 		restorePostIt: (state, action: PayloadAction<IPostIt>) => {
 			console.log(state, action.payload);

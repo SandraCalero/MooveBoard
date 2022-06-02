@@ -33,7 +33,10 @@ const useTrashspace = () => {
 
 	const handleClearTrash = () => dispatch(clearTrashBin());
 
-	const handleDeletePostIt = () => dispatch(deletePostIt(postIt.id));
+	const handleDeletePostIt = () => {
+		dispatch(deletePostIt(postIt.id));
+		shouldCloseModal();
+	};
 
 	return {
 		shouldOpenModal,
