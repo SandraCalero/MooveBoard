@@ -7,7 +7,10 @@ interface PostItListProps {
 	shouldOpenModal: (s: IPostIt) => void;
 }
 
-function DeletedPostItList({ postItList, shouldOpenModal }: PostItListProps) {
+export default function DeletedPostItList({
+	postItList,
+	shouldOpenModal,
+}: PostItListProps) {
 	return (
 		<ul className='container deletedPostIts'>
 			{postItList.map((postIt) => (
@@ -22,5 +25,3 @@ function DeletedPostItList({ postItList, shouldOpenModal }: PostItListProps) {
 		</ul>
 	);
 }
-
-export default DeletedPostItList;

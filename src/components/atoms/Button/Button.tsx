@@ -8,7 +8,13 @@ interface ButtonProps {
 	onClick: () => void;
 }
 
-function Button({ text, variant, icon, altText, onClick }: ButtonProps) {
+export default function Button({
+	text,
+	variant,
+	icon,
+	altText,
+	onClick,
+}: ButtonProps) {
 	return (
 		<button
 			name='button'
@@ -27,5 +33,3 @@ Button.defaultProps = {
 	icon: '',
 	altText: '',
 };
-
-export default Button;

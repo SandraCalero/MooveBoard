@@ -4,8 +4,8 @@ import Header from 'components/organisms/Header/Header';
 import { Link } from 'react-router-dom';
 import restorePostIt from 'assets/icons/restorePostIt.png';
 import emptyTrashBin from 'assets/icons/emptyTrashBin.png';
-import DeletedPostItList from 'components/organisms/PostItEditableList/PostItEditableList';
 import Modal from 'components/molecules/Modal/Modal';
+import DeletedPostItList from 'components/organisms/DeletedPostItList/DeletedPostItList';
 import useTrashspace from './useTrashspace';
 
 export default function Trashspace() {

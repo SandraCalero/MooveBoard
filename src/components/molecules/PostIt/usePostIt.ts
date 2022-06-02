@@ -3,7 +3,7 @@ import { ChangeEvent, DragEvent, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { editPostIt } from 'redux/slices/workspace';
 
-export const usePostIt = ({
+const usePostIt = ({
 	id,
 	content,
 	disabled,

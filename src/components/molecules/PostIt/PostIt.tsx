@@ -1,9 +1,9 @@
 import Button from 'components/atoms/Button/Button';
 import { IPostItEditableWithEvent } from 'globals/definitions/postItProps';
-import { usePostIt } from './usePostIt';
+import usePostIt from './usePostIt';
 import './PostIt.css';
 
-function PostIt({
+export default function PostIt({
 	id,
 	content,
 	disabled,
@@ -48,5 +48,3 @@ function PostIt({
 		</div>
 	);
 }
-
-export default PostIt;

@@ -2,7 +2,7 @@ import { IPostItWithEvent } from 'globals/definitions/postItProps';
 import { useDispatch } from 'react-redux';
 import { restorePostIt } from 'redux/slices/trashspace';
 
-export const useDeletedPostIt = ({
+const useDeletedPostIt = ({
 	id,
 	content,
 	shouldOpenModal,

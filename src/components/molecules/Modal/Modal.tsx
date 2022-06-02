@@ -1,7 +1,7 @@
 import warning from 'assets/icons/warning.png';
 import Button from 'components/atoms/Button/Button';
 import './Modal.css';
-import { useModal } from './useModal';
+import useModal from './useModal';
 
 interface ModalProps {
 	title: string;

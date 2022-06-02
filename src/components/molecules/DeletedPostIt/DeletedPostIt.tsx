@@ -1,9 +1,12 @@
 import Button from 'components/atoms/Button/Button';
 import { IPostItWithEvent } from 'globals/definitions/postItProps';
-import { useDeletedPostIt } from './useDeletedPostIt';
-import './DeletedPostIt.css';
+import useDeletedPostIt from './useDeletedPostIt';
 
-function DeletedPostIt({ id, content, shouldOpenModal }: IPostItWithEvent) {
+export default function DeletedPostIt({
+	id,
+	content,
+	shouldOpenModal,
+}: IPostItWithEvent) {
 	const { handleOnContextMenu, handleClose } = useDeletedPostIt({
 		id,
 		content,
@@ -21,5 +24,3 @@ function DeletedPostIt({ id, content, shouldOpenModal }: IPostItWithEvent) {
 		</div>
 	);
 }
-
-export default DeletedPostIt;

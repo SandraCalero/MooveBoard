@@ -1,13 +1,15 @@
 import PostIt from 'components/molecules/PostIt/PostIt';
 import { IPostItEditable, IPostIt } from 'globals/definitions/postItProps';
-import './PostItEditableList.css';
 
 interface PostItListProps {
 	postItList: Array<IPostItEditable>;
 	shouldOpenModal: (postIt: IPostIt) => void;
 }
 
-function PostItEditableList({ postItList, shouldOpenModal }: PostItListProps) {
+export default function PostItEditableList({
+	postItList,
+	shouldOpenModal,
+}: PostItListProps) {
 	return (
 		<ul className='container'>
 			{postItList.map((postIt) => (
@@ -23,5 +25,3 @@ function PostItEditableList({ postItList, shouldOpenModal }: PostItListProps) {
 		</ul>
 	);
 }
-
-export default PostItEditableList;
