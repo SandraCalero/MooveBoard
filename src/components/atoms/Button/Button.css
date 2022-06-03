@@ -56,3 +56,36 @@
 	flex-direction: column;
 	align-items: center;
 }
+
+/* Post It buttons */
+
+.button.closePostIt {
+	opacity: 0.2;
+	margin: 0;
+	font-size: 2rem;
+}
+.postItCreated .button.closePostIt {
+	align-self: flex-end;
+	padding: 0.8rem 0.8rem 0;
+}
+
+.button.closePostIt:hover,
+.button.restore:hover {
+	opacity: 1;
+}
+
+.button.restore {
+	opacity: 0.2;
+	margin: 0;
+}
+
+.button.restore:hover::after {
+	content: 'Restore';
+	font-size: 1.5rem;
+}
+
+.button.restore img {
+	height: 2.4rem;
+	width: 2.4rem;
+	margin: 0;
+}
