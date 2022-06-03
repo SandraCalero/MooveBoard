@@ -16,7 +16,6 @@ export default function PostIt({
 		handleDragStart,
 		handleDrag,
 		handleDragEnd,
-		handleOnContextMenu,
 		handleClose,
 		handleChange,
 		handleBlur,
@@ -32,7 +31,6 @@ export default function PostIt({
 			onDragStart={handleDragStart}
 			onDrag={handleDrag}
 			onDragEnd={handleDragEnd}
-			onContextMenu={handleOnContextMenu}
 			onClick={handleClick}
 			aria-hidden='true'
 		>

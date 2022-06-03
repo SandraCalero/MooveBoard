@@ -57,7 +57,7 @@
 	align-items: center;
 }
 
-/* Post It button */
+/* Post It buttons */
 
 .button.closePostIt {
 	opacity: 0.2;
@@ -69,7 +69,8 @@
 	padding: 0.8rem 0.8rem 0;
 }
 
-.button.closePostIt:hover {
+.button.closePostIt:hover,
+.button.restore:hover {
 	opacity: 1;
 }
 
@@ -87,7 +88,4 @@
 	height: 2.4rem;
 	width: 2.4rem;
 	margin: 0;
-}
-.button.restore:hover {
-	opacity: 1;
 }

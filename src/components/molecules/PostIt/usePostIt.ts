@@ -41,10 +41,6 @@ const usePostIt = ({
 		setStylePostIt(newPostItPosition);
 	};
 
-	const handleOnContextMenu = () => {
-		console.log('Click derecho');
-	};
-
 	const handleChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
 		setNewContent(event.target.value);
 	};
@@ -72,7 +68,6 @@ const usePostIt = ({
 		handleDragStart,
 		handleDrag,
 		handleDragEnd,
-		handleOnContextMenu,
 		handleClose,
 		handleChange,
 		handleBlur,
