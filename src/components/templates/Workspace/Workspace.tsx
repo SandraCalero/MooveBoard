@@ -10,8 +10,8 @@ export default function Workspace() {
 	const {
 		isModalOpen,
 		movePostItToTrash,
-		shouldCloseModal,
-		shouldOpenModal,
+		hideModal,
+		showModal,
 		handleCreatePostIt,
 		postItList,
 	} = useWorkspace();
@@ -28,16 +28,13 @@ export default function Workspace() {
 				<TrashBinLink />
 			</Header>
 			<h1>Workspace</h1>
-			<PostItEditableList
-				postItList={postItList}
-				shouldOpenModal={shouldOpenModal}
-			/>
+			<PostItEditableList postItList={postItList} showModal={showModal} />
 			<Modal
 				title='Move post it to the trash'
 				message='Are you sure you want to move this post it to the trash?'
 				isModalOpen={isModalOpen}
 				onConfirm={movePostItToTrash}
-				onCancel={shouldCloseModal}
+				onCancel={hideModal}
 			/>
 		</section>
 	);

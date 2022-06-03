@@ -4,12 +4,12 @@ import './DeletedPostItList.css';
 
 interface PostItListProps {
 	postItList: Array<IPostIt>;
-	shouldOpenModal: (s: IPostIt) => void;
+	showModal: (s: IPostIt) => void;
 }
 
 export default function DeletedPostItList({
 	postItList,
-	shouldOpenModal,
+	showModal,
 }: PostItListProps) {
 	return (
 		<ul className='container deletedPostIts'>
@@ -17,7 +17,7 @@ export default function DeletedPostItList({
 				<li key={postIt.id}>
 					<DeletedPostIt
 						id={postIt.id}
-						shouldOpenModal={shouldOpenModal}
+						showModal={showModal}
 						content={postIt.content}
 					/>
 				</li>

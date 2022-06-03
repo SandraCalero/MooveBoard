@@ -7,7 +7,7 @@ export default function PostIt({
 	id,
 	content,
 	disabled,
-	shouldOpenModal,
+	showModal,
 }: IPostItEditableWithEvent) {
 	const {
 		newContent,
@@ -21,7 +21,7 @@ export default function PostIt({
 		handleChange,
 		handleBlur,
 		handleClick,
-	} = usePostIt({ id, disabled, content, shouldOpenModal });
+	} = usePostIt({ id, disabled, content, showModal });
 
 	return (
 		<div

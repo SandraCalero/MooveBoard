@@ -16,12 +16,12 @@ const useTrashspace = () => {
 	const [postIt, setPostIt] = useState(initialPostIt);
 	const [isModalOpen, setIsModalOpen] = useState(false);
 
-	const shouldOpenModal = (postItInfo: IPostIt) => {
+	const showModal = (postItInfo: IPostIt) => {
 		setIsModalOpen(true);
 		setPostIt(postItInfo);
 	};
 
-	const shouldCloseModal = () => {
+	const hideModal = () => {
 		setIsModalOpen(false);
 		setPostIt(initialPostIt);
 	};
@@ -35,14 +35,14 @@ const useTrashspace = () => {
 
 	const handleDeletePostIt = () => {
 		dispatch(deletePostIt(postIt.id));
-		shouldCloseModal();
+		hideModal();
 	};
 
 	return {
-		shouldOpenModal,
+		showModal,
 		handleClearTrash,
 		handleRestoreAll,
-		shouldCloseModal,
+		hideModal,
 		handleDeletePostIt,
 		isModalOpen,
 		deletedPostIts,

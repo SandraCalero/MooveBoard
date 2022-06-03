@@ -16,12 +16,12 @@ const useWorkspace = () => {
 	const [postIt, setPostIt] = useState(initialPostIt);
 	const [isModalOpen, setIsModalOpen] = useState(false);
 
-	const shouldOpenModal = (postItInfo: IPostIt) => {
+	const showModal = (postItInfo: IPostIt) => {
 		setIsModalOpen(true);
 		setPostIt(postItInfo);
 	};
 
-	const shouldCloseModal = () => {
+	const hideModal = () => {
 		setIsModalOpen(false);
 		setPostIt(initialPostIt);
 	};
@@ -29,16 +29,16 @@ const useWorkspace = () => {
 	const movePostItToTrash = () => {
 		dispatch(moveToTrash(postIt));
 		dispatch(addPostItToTrash(postIt));
-		shouldCloseModal();
+		hideModal();
 	};
 	const handleCreatePostIt = () => {
 		dispatch(createPostIt());
 	};
 	return {
-		shouldOpenModal,
+		showModal,
 		handleCreatePostIt,
 		movePostItToTrash,
-		shouldCloseModal,
+		hideModal,
 		isModalOpen,
 		postItList,
 	};

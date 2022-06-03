@@ -3,12 +3,12 @@ import { IPostItEditable, IPostIt } from 'globals/definitions/postItProps';
 
 interface PostItListProps {
 	postItList: Array<IPostItEditable>;
-	shouldOpenModal: (postIt: IPostIt) => void;
+	showModal: (postIt: IPostIt) => void;
 }
 
 export default function PostItEditableList({
 	postItList,
-	shouldOpenModal,
+	showModal,
 }: PostItListProps) {
 	return (
 		<ul className='container'>
@@ -16,7 +16,7 @@ export default function PostItEditableList({
 				<li key={postIt.id}>
 					<PostIt
 						id={postIt.id}
-						shouldOpenModal={shouldOpenModal}
+						showModal={showModal}
 						content={postIt.content}
 						disabled={postIt.disabled}
 					/>

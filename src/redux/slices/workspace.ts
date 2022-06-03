@@ -41,6 +41,10 @@ const workspaceSlice = createSlice({
 				JSON.stringify(state.currentPostItId)
 			);
 		},
+		restorePostIt: (state, action: PayloadAction<IPostIt>) => {
+			state.postItList.push({ ...action.payload, disabled: true });
+			localStorage.setItem('postItList', JSON.stringify(state.postItList));
+		},
 		moveToTrash: (state, action: PayloadAction<PostItId>) => {
 			const postItIndex = state.postItList.findIndex(
 				(postIt) => postIt.id === action.payload.id
@@ -67,7 +71,12 @@ const workspaceSlice = createSlice({
 	},
 });
 
-export const { createPostIt, moveToTrash, restoreAllPostIts, editPostIt } =
-	workspaceSlice.actions;
+export const {
+	createPostIt,
+	restorePostIt,
+	moveToTrash,
+	restoreAllPostIts,
+	editPostIt,
+} = workspaceSlice.actions;
 
 export default workspaceSlice.reducer;

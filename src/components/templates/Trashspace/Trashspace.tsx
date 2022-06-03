@@ -2,7 +2,7 @@ import backToWorkspace from 'assets/icons/backToWorkspace.png';
 import Button from 'components/atoms/Button/Button';
 import Header from 'components/organisms/Header/Header';
 import { Link } from 'react-router-dom';
-import restorePostIt from 'assets/icons/restorePostIt.png';
+import restoreAllPostIts from 'assets/icons/restoreAllPostIts.png';
 import emptyTrashBin from 'assets/icons/emptyTrashBin.png';
 import Modal from 'components/molecules/Modal/Modal';
 import DeletedPostItList from 'components/organisms/DeletedPostItList/DeletedPostItList';
@@ -10,10 +10,10 @@ import useTrashspace from './useTrashspace';
 
 export default function Trashspace() {
 	const {
-		shouldOpenModal,
+		showModal,
 		handleClearTrash,
 		handleRestoreAll,
-		shouldCloseModal,
+		hideModal,
 		handleDeletePostIt,
 		isModalOpen,
 		deletedPostIts,
@@ -31,7 +31,7 @@ export default function Trashspace() {
 				<Button
 					variant='restorePostIts'
 					text='Restore all post-its'
-					icon={restorePostIt}
+					icon={restoreAllPostIts}
 					altText='Restore all post-its'
 					onClick={handleRestoreAll}
 				/>
@@ -42,16 +42,13 @@ export default function Trashspace() {
 			</Header>
 			<h1>Trash Bin</h1>
 
-			<DeletedPostItList
-				postItList={deletedPostIts}
-				shouldOpenModal={shouldOpenModal}
-			/>
+			<DeletedPostItList postItList={deletedPostIts} showModal={showModal} />
 			<Modal
 				title='Delete Post It Note'
 				message='Are you sure you want to delete this post it permanently?'
 				isModalOpen={isModalOpen}
 				onConfirm={handleDeletePostIt}
-				onCancel={shouldCloseModal}
+				onCancel={hideModal}
 			/>
 		</section>
 	);

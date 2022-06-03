@@ -7,7 +7,7 @@ const usePostIt = ({
 	id,
 	content,
 	disabled,
-	shouldOpenModal,
+	showModal,
 }: IPostItEditableWithEvent) => {
 	const dispatch = useDispatch();
 
@@ -63,7 +63,7 @@ const usePostIt = ({
 		);
 	};
 
-	const handleClose = () => shouldOpenModal({ id, content });
+	const handleClose = () => showModal({ id, content });
 
 	return {
 		newContent,
