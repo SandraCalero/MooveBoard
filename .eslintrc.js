@@ -10,6 +10,7 @@ module.exports = {
 		'plugin:@typescript-eslint/recommended',
 		'plugin:import/recommended',
 		'plugin:import/typescript',
+		'plugin:react-hooks/recommended',
 		'plugin:react/jsx-runtime',
 		'plugin:react/recommended',
 		'eslint-config-prettier',
@@ -22,7 +23,7 @@ module.exports = {
 		ecmaVersion: 'latest',
 		sourceType: 'module',
 	},
-	plugins: ['react', '@typescript-eslint'],
+	plugins: ['react', '@typescript-eslint', 'react-hooks'],
 	rules: {
 		'import/extensions': [
 			'error',
@@ -34,6 +35,8 @@ module.exports = {
 		],
 		'import/no-unresolved': 'off',
 		'no-console': 'warn',
+		'react-hooks/rules-of-hooks': 'error',
+		'react-hooks/exhaustive-deps': 'warn',
 		'react/jsx-filename-extension': [1, { extensions: ['.ts', '.tsx'] }],
 		'react/react-in-jsx-scope': 'off',
 	},

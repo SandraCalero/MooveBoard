@@ -1,18 +1,24 @@
 import { Link } from 'react-router-dom';
-import trashBinEmpty from 'assets/icons/trashBinEmpty.png';
-/* import trashBinFull from 'assets/icons/trashBinFull.png'; */
+import useTrashBinLink from './useTrashBinLink';
 
 export default function TrashBinLink() {
+	const { trashIcon, isEmpty } = useTrashBinLink();
+
 	return (
 		<Link
 			to='/trashbin'
 			className='link'
-			onDrop={(event) => console.log(event)}
-			onDragOver={(event) => console.log(event)}
+			/* 			onDrop={(event) => console.log(event)}
+			onDragOver={() => console.log('Drag over trash icon')} */
 		>
-			<img src={trashBinEmpty} alt='Trash bin' />
-			<span>Trash Bin</span>
-			{/* <img src={trashBinFull} alt='Trash bin' /> */}
+			<img src={trashIcon} alt='Trash bin' />
+			{isEmpty ? (
+				<span>Trash Bin</span>
+			) : (
+				<span>
+					<strong>Trash Bin</strong>
+				</span>
+			)}
 		</Link>
 	);
 }

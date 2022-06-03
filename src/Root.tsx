@@ -1,14 +1,18 @@
-import TrashSpace from 'components/templates/Trashspace/TrashSpace';
-import WorkSpace from 'components/templates/Workspace/WorkSpace';
+import Trashspace from 'components/templates/Trashspace/Trashspace';
+import Workspace from 'components/templates/Workspace/Workspace';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import store from 'redux/store';
 
 export default function Root() {
 	return (
-		<BrowserRouter>
-			<Routes>
-				<Route path='/' element={<WorkSpace />} />
-				<Route path='/trashbin' element={<TrashSpace />} />
-			</Routes>
-		</BrowserRouter>
+		<Provider store={store}>
+			<BrowserRouter>
+				<Routes>
+					<Route path='/' element={<Workspace />} />
+					<Route path='/trashbin' element={<Trashspace />} />
+				</Routes>
+			</BrowserRouter>
+		</Provider>
 	);
 }
