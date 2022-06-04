@@ -17,17 +17,17 @@ export default function Workspace() {
 	} = useWorkspace();
 
 	return (
-		<section>
+		<section className='overflow-hidden h-full'>
 			<Header>
 				<Button
-					variant='newPostItButton'
+					variant='w-20 h-20'
 					icon={newPostIt}
 					altText='Create new Post It'
 					onClick={handleCreatePostIt}
 				/>
 				<TrashBinLink />
 			</Header>
-			<h1>Workspace</h1>
+			<h1 className='text-center text-grey'>Workspace</h1>
 			<PostItEditableList postItList={postItList} showModal={showModal} />
 			<Modal
 				title='Move post it to the trash'

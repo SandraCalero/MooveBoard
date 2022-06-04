@@ -24,7 +24,7 @@ export default function PostIt({
 
 	return (
 		<div
-			className='postItContainer postItCreated'
+			className='flex flex-col items-center justify-center bg-yellow shadow-md md:absolute'
 			style={stylePostIt}
 			draggable
 			id={id.toString()}

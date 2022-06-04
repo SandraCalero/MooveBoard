@@ -2,7 +2,6 @@ import Button from 'components/atoms/Button/Button';
 import { IPostItWithEvent } from 'globals/definitions/postItProps';
 import restorePostIt from 'assets/icons/restorePostIt.png';
 import useDeletedPostIt from './useDeletedPostIt';
-import './DeletedPostIt.css';
 
 export default function DeletedPostIt({
 	id,
@@ -17,20 +16,24 @@ export default function DeletedPostIt({
 
 	return (
 		<div
-			className='postItContainer deleted'
+			className='flex flex-col items-center justify-center bg-yellow shadow-md'
 			id={id.toString()}
 			onClick={hideContextMenu}
 			aria-hidden='true'
 		>
-			<div className='restoreAndClose'>
+			<div className='flex justify-between w-full px-2 pt-2 items-start'>
 				<Button
-					variant='restore'
+					variant='h-8 w-8 m-0 opacity-20 hover:opacity-100 hover:after:content-["Restore"] after:text-sm'
 					onClick={handleRestore}
 					icon={restorePostIt}
 				/>
-				<Button variant='closePostIt' onClick={handleClose} text='X' />
+				<Button
+					variant='h-6 w-6 m-0 opacity-20 text-xl hover:opacity-100'
+					onClick={handleClose}
+					text='X'
+				/>
 			</div>
-			<div className='note'>{content}</div>
+			<div className='p-2 h-52 w-52 bg-transparent'>{content}</div>
 		</div>
 	);
 }
