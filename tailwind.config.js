@@ -2,7 +2,6 @@ const plugin = require('tailwindcss/plugin');
 
 module.exports = {
 	content: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
-	darkMode: true,
 	theme: {
 		colors: {
 			white: '#ffffff',
@@ -25,6 +24,9 @@ module.exports = {
 				900: '#000000',
 			},
 		},
+		gridTemplateColumns: {
+			auto: 'repeat(auto-fill, minmax(13rem, 1fr))'
+		}
 	},
 	plugins: [
 		plugin(function ({ addBase, theme }) {

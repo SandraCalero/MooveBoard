@@ -16,7 +16,7 @@ export default function DeletedPostIt({
 
 	return (
 		<div
-			className='flex flex-col items-center justify-center bg-yellow shadow-md'
+			className='flex flex-col items-center justify-center bg-yellow shadow-md w-max'
 			id={id.toString()}
 			onClick={hideContextMenu}
 			aria-hidden='true'
@@ -33,7 +33,9 @@ export default function DeletedPostIt({
 					text='X'
 				/>
 			</div>
-			<div className='p-2 h-52 w-52 bg-transparent'>{content}</div>
+			<div className='break-words p-2 w-52 basis-52  bg-transparent'>
+				{content}
+			</div>
 		</div>
 	);
 }

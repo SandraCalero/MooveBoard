@@ -19,7 +19,7 @@ export default function Trashspace() {
 		deletedPostIts,
 	} = useTrashspace();
 	return (
-		<section className='overflow-hidden h-full'>
+		<section className='overflow-y-scroll h-full'>
 			<Header>
 				<Button
 					variant='w-20 h-28'

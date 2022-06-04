@@ -1,7 +1,6 @@
 import Button from 'components/atoms/Button/Button';
 import { IPostItEditableWithEvent } from 'globals/definitions/postItProps';
 import usePostIt from './usePostIt';
-import './PostIt.css';
 
 export default function PostIt({
 	id,
@@ -24,7 +23,7 @@ export default function PostIt({
 
 	return (
 		<div
-			className='flex flex-col items-center justify-center bg-yellow shadow-md md:absolute'
+			className='flex flex-col items-center justify-center bg-yellow shadow-md w-max md:absolute md:cursor-grab'
 			style={stylePostIt}
 			draggable
 			id={id.toString()}
@@ -34,12 +33,16 @@ export default function PostIt({
 			onClick={handleClick}
 			aria-hidden='true'
 		>
-			<Button variant='closePostIt' onClick={handleClose} text='X' />
+			<Button
+				variant='my-0 mx-0 px-2 pt-2 opacity-20 text-xl hover:opacity-100 self-end'
+				onClick={handleClose}
+				text='X'
+			/>
 			<textarea
 				onChange={handleChange}
 				onBlur={handleBlur}
 				disabled={isDisabled}
-				className='note'
+				className='p-2 w-52 h-52 bg-transparent outline-none border-none resize-y md:resize md:cursor-grab focus:cursor-text'
 				name='note'
 				value={newContent}
 			/>

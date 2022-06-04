@@ -17,13 +17,13 @@ export default function Modal({
 	onConfirm,
 	onCancel,
 }: ModalProps) {
-	const { wrapperClass } = useModal({ isModalOpen });
+	const { flex } = useModal({ isModalOpen });
 
 	return (
 		<div
-			className={`${wrapperClass} items-center justify-center z-10 m-0 p-0 overflow-hidden w-full h-full absolute inset-0  bg-mine-shaft-50 bg-opacity-80 bg-blur-sm`}
+			className={`${flex} items-center justify-center z-10 m-0 p-0 w-full h-full absolute inset-0 bg-transparent`}
 		>
-			<div className='flex flex-col justify-center items-center bg-white max-w-xs h-auto border-none rounded-lg shadow-md'>
+			<div className='flex flex-col justify-center items-center bg-white max-w-xs h-auto border border-mine-shaft-50 rounded-lg drop-shadow-2xl shadow-2xl'>
 				<h2 className='flex items-center p-3 m-2'>{title}</h2>
 				<div className='flex items-center p-3 m-0 border-y border-solid border-grey'>
 					<img className='m-2 w-10' src={warning} alt='Warning icon' />

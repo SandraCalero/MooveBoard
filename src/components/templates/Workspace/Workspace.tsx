@@ -17,10 +17,10 @@ export default function Workspace() {
 	} = useWorkspace();
 
 	return (
-		<section className='overflow-hidden h-full'>
+		<section className='overflow-y-scroll h-full'>
 			<Header>
 				<Button
-					variant='w-20 h-20'
+					variant='w-20 h-20 z-10'
 					icon={newPostIt}
 					altText='Create new Post It'
 					onClick={handleCreatePostIt}
