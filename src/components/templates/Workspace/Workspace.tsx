@@ -9,15 +9,17 @@ import useWorkspace from './useWorkspace';
 export default function Workspace() {
 	const {
 		isModalOpen,
+		postItList,
+		modeText,
 		movePostItToTrash,
 		hideModal,
 		showModal,
 		handleCreatePostIt,
-		postItList,
+		handleDarkMode,
 	} = useWorkspace();
 
 	return (
-		<section className='overflow-y-scroll h-full'>
+		<section className='overflow-y-scroll h-full flex flex-col'>
 			<Header>
 				<Button
 					variant='w-20 h-20 z-10'
@@ -27,7 +29,9 @@ export default function Workspace() {
 				/>
 				<TrashBinLink />
 			</Header>
-			<h1 className='text-center text-grey'>Workspace</h1>
+			<h1 className='text-center text-grey dark:text-mine-shaft-400 transition-colors'>
+				Workspace
+			</h1>
 			<PostItEditableList postItList={postItList} showModal={showModal} />
 			<Modal
 				title='Move post it to the trash'
@@ -35,6 +39,12 @@ export default function Workspace() {
 				isModalOpen={isModalOpen}
 				onConfirm={movePostItToTrash}
 				onCancel={hideModal}
+			/>
+			<Button
+				variant='fixed bottom-2 right-4 bg-blue text-white p-2 font-medium
+				dark:bg-white dark:text-blue rounded-lg transition-colors'
+				text={modeText}
+				onClick={handleDarkMode}
 			/>
 		</section>
 	);

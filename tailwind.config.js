@@ -2,6 +2,7 @@ const plugin = require('tailwindcss/plugin');
 
 module.exports = {
 	content: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
+	darkMode: 'class',
 	theme: {
 		colors: {
 			white: '#ffffff',
@@ -23,6 +24,18 @@ module.exports = {
 				800: '#000000',
 				900: '#000000',
 			},
+			'cerulean': {
+				DEFAULT: '#0BAEBD',
+				100: '#74ECF7',
+				200: '#4EE7F5',
+				50: '#88EFF8',
+				300: '#27E1F2',
+				400: '#0DD1E4',
+				500: '#0BAEBD',
+				600: '#087D88',
+				700: '#054C53',
+				800: '#021C1E',
+				900: '#000000'},
 		},
 		gridTemplateColumns: {
 			auto: 'repeat(auto-fill, minmax(13rem, 1fr))'

@@ -23,7 +23,10 @@ export default function PostIt({
 
 	return (
 		<div
-			className='flex flex-col items-center justify-center bg-yellow shadow-md w-max md:absolute md:cursor-grab'
+			className='flex flex-col items-center justify-center bg-yellow
+			shadow-xl w-max md:absolute md:cursor-grab dark:bg-cerulean-500
+			dark:shadow-xl dark:shadow-cerulean-700 transition-colors
+			dark:border dark:border-grey dark:text-mine-shaft-600'
 			style={stylePostIt}
 			draggable
 			id={id.toString()}
@@ -34,7 +37,9 @@ export default function PostIt({
 			aria-hidden='true'
 		>
 			<Button
-				variant='my-0 mx-0 px-2 pt-2 opacity-20 text-xl hover:opacity-100 self-end'
+				variant='my-0 mx-0 px-2 pt-2 opacity-20 text-xl
+				hover:opacity-100 self-end dark:text-mine-shaft-900
+				dark:opacity-40 dark:hover:opacity-100 transition-colors'
 				onClick={handleClose}
 				text='X'
 			/>
@@ -42,7 +47,8 @@ export default function PostIt({
 				onChange={handleChange}
 				onBlur={handleBlur}
 				disabled={isDisabled}
-				className='p-2 w-52 h-52 bg-transparent outline-none border-none resize-y md:resize md:cursor-grab focus:cursor-text'
+				className='p-2 w-52 h-52 bg-transparent outline-none
+				border-none resize-y md:resize md:cursor-grab focus:cursor-text'
 				name='note'
 				value={newContent}
 			/>

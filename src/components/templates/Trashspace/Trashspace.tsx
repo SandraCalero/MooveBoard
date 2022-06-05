@@ -18,6 +18,7 @@ export default function Trashspace() {
 		isModalOpen,
 		deletedPostIts,
 	} = useTrashspace();
+
 	return (
 		<section className='overflow-y-scroll h-full'>
 			<Header>
@@ -43,7 +44,9 @@ export default function Trashspace() {
 					<span>Back to workspace </span>
 				</Link>
 			</Header>
-			<h1 className='text-center text-grey'>Trash Bin</h1>
+			<h1 className='m-2 text-center text-grey dark:text-mine-shaft-400 transition-colors'>
+				Trash Bin
+			</h1>
 
 			<DeletedPostItList postItList={deletedPostIts} showModal={showModal} />
 			<Modal
