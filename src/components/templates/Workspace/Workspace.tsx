@@ -29,7 +29,10 @@ export default function Workspace() {
 				/>
 				<TrashBinLink />
 			</Header>
-			<h1 className='text-center text-grey dark:text-mine-shaft-400 transition-colors'>
+			<h1
+				className='text-center text-grey dark:text-mine-shaft-400
+				transition-colors'
+			>
 				Workspace
 			</h1>
 			<PostItEditableList postItList={postItList} showModal={showModal} />

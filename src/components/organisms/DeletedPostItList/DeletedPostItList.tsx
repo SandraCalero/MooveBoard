@@ -11,7 +11,10 @@ export default function DeletedPostItList({
 	showModal,
 }: PostItListProps) {
 	return (
-		<ul className='grid grid-cols-auto p-4 m-0 list-none gap-4 justify-center'>
+		<ul
+			className='grid grid-cols-auto p-4 m-0 list-none gap-4
+			justify-center'
+		>
 			{postItList.map((postIt) => (
 				<li className='justify-self-center' key={postIt.id}>
 					<DeletedPostIt

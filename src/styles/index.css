@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-.container {
+/* .container {
 	list-style-type: none;
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
@@ -16,7 +16,6 @@
 	max-height: calc(100% - 15.3rem);
 	justify-items: center;
 	gap: 1rem;
-	/* overflow-y-scroll justify-center gap-4  */
 }
 
 @media (max-width: 768px) {
@@ -27,3 +26,4 @@
 		gap: 1rem;
 	}
 }
+ */

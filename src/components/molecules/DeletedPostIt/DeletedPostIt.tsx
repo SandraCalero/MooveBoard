@@ -26,7 +26,7 @@ export default function DeletedPostIt({
 		>
 			<div className='flex justify-between w-full px-2 pt-2 items-start'>
 				<Button
-					variant='h-8 w-8 my-0 mx-0 opacity-20 hover:opacity-100
+					variant='h-7 w-7 my-0 mx-0 opacity-20 hover:opacity-100
 					relative hover:after:content-["Restore"] after:absolute
 					after:left-8 after:bg-white after:rounded-lg after:p-1
 					after:text-sm dark:text-mine-shaft-900 dark:opacity-40

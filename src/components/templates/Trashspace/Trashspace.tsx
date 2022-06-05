@@ -38,13 +38,17 @@ export default function Trashspace() {
 				/>
 				<Link
 					to='/'
-					className='w-20 h-28 flex flex-col items-center no-underline p-0 m-2 text-center hover:opacity-90 active:translate-y-1'
+					className='w-20 h-28 flex flex-col items-center no-underline
+					p-0 m-2 text-center hover:opacity-90 active:translate-y-1'
 				>
 					<img className='w-4/5 h-4/5' src={backToWorkspace} alt='Trash bin' />
 					<span>Back to workspace </span>
 				</Link>
 			</Header>
-			<h1 className='m-2 text-center text-grey dark:text-mine-shaft-400 transition-colors'>
+			<h1
+				className='m-2 text-center text-grey dark:text-mine-shaft-400
+				transition-colors'
+			>
 				Trash Bin
 			</h1>
 

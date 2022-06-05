@@ -7,7 +7,8 @@ export default function TrashBinLink() {
 	return (
 		<Link
 			to='/trashbin'
-			className='flex flex-col items-center no-underline p-0 m-2 text-center hover:opacity-90 active:translate-y-1'
+			className='flex flex-col items-center no-underline p-0 m-2
+			text-center hover:opacity-90 active:translate-y-1'
 			/* 			onDrop={(event) => console.log(event)}
 			onDragOver={() => console.log('Drag over trash icon')} */
 		>
