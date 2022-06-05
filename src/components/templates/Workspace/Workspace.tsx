@@ -30,7 +30,7 @@ export default function Workspace() {
 				<TrashBinLink />
 			</Header>
 			<h1
-				className='text-center text-grey dark:text-mine-shaft-400
+				className='m-2 text-center text-grey dark:text-mine-shaft-400
 				transition-colors'
 			>
 				Workspace
@@ -44,8 +44,13 @@ export default function Workspace() {
 				onCancel={hideModal}
 			/>
 			<Button
-				variant='fixed bottom-2 right-4 bg-blue text-white p-2 font-medium
-				dark:bg-white dark:text-blue rounded-lg transition-colors'
+				variant='w-20 fixed bottom-2 right-4 bg-blue text-white p-2
+				hover:opacity-100 font-medium after:absolute after:right-1
+				after:bg-white !items-start	after:rounded-full after:p-1
+				after:w-8 after:h-8 after:text-sm active:translate-y-0
+				dark:!items-end dark:after:left-1 dark:after:bg-blue
+				dark:bg-white dark:text-blue rounded-3xl transition-colors
+				transition-transform duration-300 md:w-24'
 				text={modeText}
 				onClick={handleDarkMode}
 			/>

@@ -21,7 +21,7 @@ const useWorkspace = () => {
 	const [postIt, setPostIt] = useState(initialPostIt);
 	const [isModalOpen, setIsModalOpen] = useState(false);
 
-	const modeText = darkMode ? 'Dark Mode On' : 'Dark Mode Off';
+	const modeText = darkMode ? 'Light' : 'Dark';
 
 	const showModal = (postItInfo: IPostIt) => {
 		setIsModalOpen(true);
