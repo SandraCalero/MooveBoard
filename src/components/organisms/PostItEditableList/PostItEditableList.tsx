@@ -11,9 +11,12 @@ export default function PostItEditableList({
 	showModal,
 }: PostItListProps) {
 	return (
-		<ul className='container'>
+		<ul
+			className='grid grid-cols-auto p-4 m-0 list-none gap-4
+			justify-center'
+		>
 			{postItList.map((postIt) => (
-				<li key={postIt.id}>
+				<li className='justify-self-center' key={postIt.id}>
 					<PostIt
 						id={postIt.id}
 						showModal={showModal}

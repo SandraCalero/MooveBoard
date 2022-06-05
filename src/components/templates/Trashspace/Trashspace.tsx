@@ -18,29 +18,39 @@ export default function Trashspace() {
 		isModalOpen,
 		deletedPostIts,
 	} = useTrashspace();
+
 	return (
-		<section>
+		<section className='overflow-y-scroll h-full'>
 			<Header>
 				<Button
-					variant='emptyTrash'
+					variant='w-20 h-28'
 					text='Empty trash bin'
 					icon={emptyTrashBin}
 					altText='Empty trash bin'
 					onClick={handleClearTrash}
 				/>
 				<Button
-					variant='restorePostIts'
+					variant='w-20 h-28'
 					text='Restore all post-its'
 					icon={restoreAllPostIts}
 					altText='Restore all post-its'
 					onClick={handleRestoreAll}
 				/>
-				<Link to='/' className='link'>
-					<img src={backToWorkspace} alt='Trash bin' />
+				<Link
+					to='/'
+					className='w-20 h-28 flex flex-col items-center no-underline
+					p-0 m-2 text-center hover:opacity-90 active:translate-y-1'
+				>
+					<img className='w-4/5 h-4/5' src={backToWorkspace} alt='Trash bin' />
 					<span>Back to workspace </span>
 				</Link>
 			</Header>
-			<h1>Trash Bin</h1>
+			<h1
+				className='m-2 text-center text-grey dark:text-mine-shaft-400
+				transition-colors'
+			>
+				Trash Bin
+			</h1>
 
 			<DeletedPostItList postItList={deletedPostIts} showModal={showModal} />
 			<Modal

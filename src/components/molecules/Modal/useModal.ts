@@ -1,14 +1,10 @@
-import classNames from 'classnames';
-
 interface ModalProps {
 	isModalOpen: boolean;
 }
 
 const useModal = ({ isModalOpen }: ModalProps) => {
-	const wrapperClass: string = classNames('glass', {
-		show: isModalOpen,
-	});
-	return { wrapperClass };
+	const flex: string = isModalOpen ? 'flex' : 'hidden';
+	return { flex };
 };
 
 export default useModal;

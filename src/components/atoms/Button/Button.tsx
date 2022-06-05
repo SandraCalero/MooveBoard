@@ -1,5 +1,3 @@
-import './Button.css';
-
 interface ButtonProps {
 	text?: string;
 	icon?: string;
@@ -19,10 +17,11 @@ export default function Button({
 		<button
 			name='button'
 			type='button'
-			className={`button ${variant}`}
+			className={`flex flex-col items-center justify-center border-none
+			m-2 p-0	bg-transparent hover:opacity-90 active:translate-y-1 ${variant}`}
 			onClick={onClick}
 		>
-			{icon && <img src={icon} alt={altText} />}
+			{icon && <img className='h-4/5 w-4/5' src={icon} alt={altText} />}
 			{text}
 		</button>
 	);

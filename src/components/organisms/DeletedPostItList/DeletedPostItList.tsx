@@ -1,6 +1,5 @@
 import DeletedPostIt from 'components/molecules/DeletedPostIt/DeletedPostIt';
 import { IPostIt } from 'globals/definitions/postItProps';
-import './DeletedPostItList.css';
 
 interface PostItListProps {
 	postItList: Array<IPostIt>;
@@ -12,9 +11,12 @@ export default function DeletedPostItList({
 	showModal,
 }: PostItListProps) {
 	return (
-		<ul className='container deletedPostIts'>
+		<ul
+			className='grid grid-cols-auto p-4 m-0 list-none gap-4
+			justify-center'
+		>
 			{postItList.map((postIt) => (
-				<li key={postIt.id}>
+				<li className='justify-self-center' key={postIt.id}>
 					<DeletedPostIt
 						id={postIt.id}
 						showModal={showModal}

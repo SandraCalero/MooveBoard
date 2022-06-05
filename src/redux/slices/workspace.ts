@@ -7,21 +7,31 @@ type PostItId = Pick<IPostIt, 'id'>;
 interface workspaceStateProps {
 	currentPostItId: number;
 	postItList: Array<IPostItEditable>;
+	darkMode: boolean;
 }
 
 const localPostItList = localStorage.getItem('postItList');
 const localCurrentPostItId = localStorage.getItem('currentPostItId');
+const localDarkMode = localStorage.getItem('darkMode');
 
 const postItList: Array<IPostItEditable> = localPostItList
 	? JSON.parse(localPostItList)
 	: [];
+
 const currentPostItId: number = localCurrentPostItId
 	? JSON.parse(localCurrentPostItId)
 	: 0;
 
+const darkMode: boolean = localDarkMode ? JSON.parse(localDarkMode) : false;
+
+if (darkMode) {
+	document.documentElement.classList.toggle('dark');
+}
+
 const initialState: workspaceStateProps = {
 	currentPostItId,
 	postItList,
+	darkMode,
 };
 
 const workspaceSlice = createSlice({
@@ -68,6 +78,11 @@ const workspaceSlice = createSlice({
 			});
 			localStorage.setItem('postItList', JSON.stringify(state.postItList));
 		},
+		switchToDarkMode(state) {
+			const modeStatus = document.documentElement.classList.toggle('dark');
+			state.darkMode = modeStatus;
+			localStorage.setItem('darkMode', JSON.stringify(state.darkMode));
+		},
 	},
 });
 
@@ -77,6 +92,7 @@ export const {
 	moveToTrash,
 	restoreAllPostIts,
 	editPostIt,
+	switchToDarkMode,
 } = workspaceSlice.actions;
 
 export default workspaceSlice.reducer;

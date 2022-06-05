@@ -1,6 +1,0 @@
-.container.deletedPostIts {
-	overflow-y: scroll;
-	max-height: calc(100% - 15.3rem);
-	justify-items: center;
-	gap: 1rem;
-}

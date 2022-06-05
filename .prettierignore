@@ -1,2 +1,4 @@
 dist
 package-lock.json
+tailwind.config.js
+postcss.config.js
