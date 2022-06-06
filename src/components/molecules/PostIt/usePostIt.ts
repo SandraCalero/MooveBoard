@@ -1,7 +1,7 @@
 import { IPostItEditableWithEvent } from 'globals/definitions/postItProps';
 import { ChangeEvent, DragEvent, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { editPostIt } from 'redux/slices/workspace';
+import { editPostIt } from 'redux/reducers/workspace';
 
 const usePostIt = ({
 	id,

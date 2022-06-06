@@ -3,7 +3,7 @@ import { render } from 'utils/tests/test-utils';
 import TrashBinLink from '../TrashBinLink';
 
 describe('<TrashBinLink />', () => {
-	it('Snapshot', () => {
+	it('should match the snapshot', () => {
 		const { container, getByText } = render(
 			<BrowserRouter>
 				<TrashBinLink />

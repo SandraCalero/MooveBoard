@@ -1,11 +1,11 @@
 import { BrowserRouter } from 'react-router-dom';
-import { addPostItToTrash } from 'redux/slices/trashspace';
+import { addPostItToTrash } from 'redux/reducers/trashspace';
 import store from 'redux/store';
 import { render } from 'utils/tests/test-utils';
 import Trashspace from '../Trashspace';
 
 describe('<Trashspace />', () => {
-	it('Snapshot', () => {
+	it('should match the snapshot', () => {
 		store.dispatch(
 			addPostItToTrash({
 				id: 1,

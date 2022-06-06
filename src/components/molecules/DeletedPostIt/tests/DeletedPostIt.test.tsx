@@ -2,7 +2,7 @@ import { render } from 'utils/tests/test-utils';
 import DeletedPostIt from '../DeletedPostIt';
 
 describe('<DeletedPostIt />', () => {
-	it('Snapshot', () => {
+	it('should match the snapshot', () => {
 		const showModal = jest.fn();
 		const { container, getByText } = render(
 			<DeletedPostIt

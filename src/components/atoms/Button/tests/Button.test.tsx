@@ -2,7 +2,7 @@ import { render } from 'utils/tests/test-utils';
 import Button from '../Button';
 
 describe('<Button />', () => {
-	it('Snapshot', () => {
+	it('should match the snapshot', () => {
 		const onClick = jest.fn();
 		const { container, getByText } = render(
 			<Button

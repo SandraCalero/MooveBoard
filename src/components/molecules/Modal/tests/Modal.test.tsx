@@ -2,7 +2,7 @@ import { render } from 'utils/tests/test-utils';
 import Modal from '../Modal';
 
 describe('<Modal />', () => {
-	it('Snapshot', () => {
+	it('should match the snapshot', () => {
 		const onConfirm = jest.fn();
 		const onCancel = jest.fn();
 		const { container, getByText } = render(

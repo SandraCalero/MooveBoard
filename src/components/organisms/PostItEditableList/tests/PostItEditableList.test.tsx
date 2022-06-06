@@ -3,7 +3,7 @@ import { render } from 'utils/tests/test-utils';
 import PostItEditableList from '../PostItEditableList';
 
 describe('<PostItEditableList />', () => {
-	it('Snapshot', () => {
+	it('should match the snapshot', () => {
 		const postItList: Array<IPostItEditable> = [
 			{
 				id: 1,

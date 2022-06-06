@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { addPostItToTrash } from 'redux/slices/trashspace';
+import { addPostItToTrash } from 'redux/reducers/trashspace';
 import {
 	createPostIt,
 	moveToTrash,
 	switchToDarkMode,
-} from 'redux/slices/workspace';
+} from 'redux/reducers/workspace';
 import { RootState } from 'redux/store';
 import { IPostIt } from 'globals/definitions/postItProps';
 

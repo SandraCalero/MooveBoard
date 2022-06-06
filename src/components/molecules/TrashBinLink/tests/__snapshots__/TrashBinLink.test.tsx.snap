@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<TrashBinLink /> Snapshot 1`] = `
+exports[`<TrashBinLink /> should match the snapshot 1`] = `
 <div>
   <a
     class="flex flex-col items-center no-underline p-0 m-2 text-center hover:opacity-90 active:translate-y-1"
