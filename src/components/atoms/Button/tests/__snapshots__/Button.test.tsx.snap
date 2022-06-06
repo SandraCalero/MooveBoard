@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Button /> Snapshot 1`] = `
+<div>
+  <button
+    class="flex flex-col items-center justify-center border-none
+			m-2 p-0	bg-transparent hover:opacity-90 active:translate-y-1 justify-center w-24 h-12 rounded-lg bg-grey dark:bg-mine-shaft-500 dark:text-white transition-colors"
+    name="button"
+    type="button"
+  >
+    Cancel
+  </button>
+</div>
+`;
