@@ -5,7 +5,8 @@
 			"components/*": ["components/*"],
 			"redux/*": ["redux/*"],
 			"styles/*": ["styles/*"],
-			"globals/*": ["globals/*"]
+			"globals/*": ["globals/*"],
+			"utils/*": ["utils/*"]
 		},
 		"target": "es5",
 		"lib": ["dom", "dom.iterable", "esnext"],

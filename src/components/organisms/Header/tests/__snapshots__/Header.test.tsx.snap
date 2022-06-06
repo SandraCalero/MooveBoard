@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header /> Snapshot 1`] = `
+<div>
+  <header
+    class="flex justify-around items-center p-3"
+  >
+    <button
+      class="flex flex-col items-center justify-center border-none
+			m-2 p-0	bg-transparent hover:opacity-90 active:translate-y-1 w-20 h-20 z-10"
+      name="button"
+      type="button"
+    />
+  </header>
+</div>
+`;
