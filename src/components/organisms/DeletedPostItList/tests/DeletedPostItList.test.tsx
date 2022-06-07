@@ -3,7 +3,7 @@ import { render } from 'utils/tests/test-utils';
 import DeletedPostItList from '../DeletedPostItList';
 
 describe('<DeletedPostItList />', () => {
-	it('Snapshot', () => {
+	it('should match the snapshot', () => {
 		const postItList: Array<IPostIt> = [
 			{
 				id: 1,

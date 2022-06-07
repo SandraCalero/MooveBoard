@@ -20,7 +20,7 @@ export default function Trashspace() {
 	} = useTrashspace();
 
 	return (
-		<section className='overflow-y-scroll h-full'>
+		<main className='overflow-y-scroll h-full'>
 			<Header>
 				<Button
 					variant='w-20 h-28'
@@ -45,21 +45,23 @@ export default function Trashspace() {
 					<span>Back to workspace </span>
 				</Link>
 			</Header>
-			<h1
-				className='m-2 text-center text-grey dark:text-mine-shaft-400
+			<section>
+				<h1
+					className='m-2 text-center text-grey dark:text-mine-shaft-400
 				transition-colors'
-			>
-				Trash Bin
-			</h1>
+				>
+					Trash Bin
+				</h1>
 
-			<DeletedPostItList postItList={deletedPostIts} showModal={showModal} />
-			<Modal
-				title='Delete Post It Note'
-				message='Are you sure you want to delete this post it permanently?'
-				isModalOpen={isModalOpen}
-				onConfirm={handleDeletePostIt}
-				onCancel={hideModal}
-			/>
-		</section>
+				<DeletedPostItList postItList={deletedPostIts} showModal={showModal} />
+				<Modal
+					title='Delete Post It Note'
+					message='Are you sure you want to delete this post it permanently?'
+					isModalOpen={isModalOpen}
+					onConfirm={handleDeletePostIt}
+					onCancel={hideModal}
+				/>
+			</section>
+		</main>
 	);
 }

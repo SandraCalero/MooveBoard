@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
-import workspaceReducer from 'redux/slices/workspace';
-import trashspaceReducer from 'redux/slices/trashspace';
+import workspaceReducer from 'redux/reducers/workspace';
+import trashspaceReducer from 'redux/reducers/trashspace';
 
 const store = configureStore({
 	reducer: {

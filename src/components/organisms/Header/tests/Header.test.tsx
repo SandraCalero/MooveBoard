@@ -3,7 +3,7 @@ import { render } from 'utils/tests/test-utils';
 import Header from '../Header';
 
 describe('<Header />', () => {
-	it('Snapshot', () => {
+	it('should match the snapshot', () => {
 		const onClick = jest.fn();
 		const { container } = render(
 			<Header>

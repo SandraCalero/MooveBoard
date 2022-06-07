@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { addPostItToTrash } from 'redux/slices/trashspace';
+import { addPostItToTrash, addAllToTrash } from 'redux/reducers/trashspace';
 import {
 	createPostIt,
+	moveAllToTrash,
 	moveToTrash,
 	switchToDarkMode,
-} from 'redux/slices/workspace';
+} from 'redux/reducers/workspace';
 import { RootState } from 'redux/store';
 import { IPostIt } from 'globals/definitions/postItProps';
 
@@ -42,6 +43,11 @@ const useWorkspace = () => {
 		dispatch(createPostIt());
 	};
 
+	const handleMoveAllToTrash = () => {
+		dispatch(moveAllToTrash());
+		dispatch(addAllToTrash(postItList));
+	};
+
 	const handleDarkMode = () => {
 		dispatch(switchToDarkMode());
 	};
@@ -53,6 +59,7 @@ const useWorkspace = () => {
 		showModal,
 		handleCreatePostIt,
 		movePostItToTrash,
+		handleMoveAllToTrash,
 		hideModal,
 		handleDarkMode,
 	};

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Trashspace /> Snapshot 1`] = `
+exports[`<Trashspace /> should match the snapshot 1`] = `
 <div>
   <section
     class="overflow-y-scroll h-full"

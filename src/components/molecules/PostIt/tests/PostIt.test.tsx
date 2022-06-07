@@ -2,7 +2,7 @@ import { render } from 'utils/tests/test-utils';
 import PostIt from '../PostIt';
 
 describe('<PostIt />', () => {
-	it('Snapshot', () => {
+	it('should match the snapshot', () => {
 		const showModal = jest.fn();
 		const { container, getByText } = render(
 			<PostIt id={1} content='Testing Post It' disabled showModal={showModal} />

@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { clearTrashBin, deletePostIt } from 'redux/slices/trashspace';
+import { clearTrashBin, deletePostIt } from 'redux/reducers/trashspace';
 import { RootState } from 'redux/store';
 import { IPostIt } from 'globals/definitions/postItProps';
-import { restoreAllPostIts } from 'redux/slices/workspace';
+import { restoreAllPostIts } from 'redux/reducers/workspace';
 
 const useTrashspace = () => {
 	const dispatch = useDispatch();

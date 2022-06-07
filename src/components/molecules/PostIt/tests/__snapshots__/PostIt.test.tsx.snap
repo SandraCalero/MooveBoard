@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<PostIt /> Snapshot 1`] = `
+exports[`<PostIt /> should match the snapshot 1`] = `
 <div>
   <div
     aria-hidden="true"

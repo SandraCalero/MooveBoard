@@ -1,8 +1,8 @@
 import { IPostItWithEvent } from 'globals/definitions/postItProps';
 import { useDispatch } from 'react-redux';
-import { deletePostIt } from 'redux/slices/trashspace';
+import { deletePostIt } from 'redux/reducers/trashspace';
 import { MouseEvent, useState } from 'react';
-import { restorePostIt } from 'redux/slices/workspace';
+import { restorePostIt } from 'redux/reducers/workspace';
 
 const useDeletedPostIt = ({ id, content, showModal }: IPostItWithEvent) => {
 	const dispatch = useDispatch();
