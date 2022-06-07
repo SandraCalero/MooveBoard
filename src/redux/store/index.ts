@@ -2,6 +2,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import workspaceReducer from 'redux/reducers/workspace';
 import trashspaceReducer from 'redux/reducers/trashspace';
 
+/* Creating a store with the reducers. */
 const store = configureStore({
 	reducer: {
 		workspace: workspaceReducer,
