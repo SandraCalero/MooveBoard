@@ -9,7 +9,6 @@ exports[`<DeletedPostItList /> should match the snapshot 1`] = `
       class="justify-self-center"
     >
       <div
-        aria-hidden="true"
         class="flex flex-col items-center justify-center bg-yellow shadow-xl w-max dark:bg-cerulean-500 dark:shadow-lg dark:shadow-cerulean-700 transition-colors dark:border dark:border-grey dark:text-mine-shaft-600"
         id="1"
       >
@@ -48,7 +47,6 @@ exports[`<DeletedPostItList /> should match the snapshot 1`] = `
       class="justify-self-center"
     >
       <div
-        aria-hidden="true"
         class="flex flex-col items-center justify-center bg-yellow shadow-xl w-max dark:bg-cerulean-500 dark:shadow-lg dark:shadow-cerulean-700 transition-colors dark:border dark:border-grey dark:text-mine-shaft-600"
         id="2"
       >

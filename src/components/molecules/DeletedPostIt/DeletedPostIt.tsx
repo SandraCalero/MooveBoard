@@ -8,7 +8,7 @@ export default function DeletedPostIt({
 	content,
 	showModal,
 }: IPostItWithEvent) {
-	const { hideContextMenu, handleRestore, handleClose } = useDeletedPostIt({
+	const { handleRestore, handleClose } = useDeletedPostIt({
 		id,
 		content,
 		showModal,
@@ -21,8 +21,6 @@ export default function DeletedPostIt({
 			dark:shadow-cerulean-700 transition-colors dark:border
 			dark:border-grey dark:text-mine-shaft-600'
 			id={id.toString()}
-			onClick={hideContextMenu}
-			aria-hidden='true'
 		>
 			<div className='flex justify-between w-full px-2 pt-2 items-start'>
 				<Button

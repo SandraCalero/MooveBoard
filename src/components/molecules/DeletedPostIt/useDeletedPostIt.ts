@@ -1,39 +1,36 @@
 import { IPostItWithEvent } from 'globals/definitions/postItProps';
 import { useDispatch } from 'react-redux';
 import { deletePostIt } from 'redux/reducers/trashspace';
-import { MouseEvent, useState } from 'react';
 import { restorePostIt } from 'redux/reducers/workspace';
+
+/**
+ * It takes the id and content of the post it that was just closed, and then passes it to the showModal
+ * function to delete permanetly the post it or to restore it.
+ * The `useDeletedPostIt` function is used in the `DeletedPostIt` component
+ * @param {IPostItWithEvent}  - IPostItWithEvent - This is the type of the parameter that is passed to
+ * the hook. It's an object that contains the id, content and showModal function of the post it.
+ * @returns an object with two functions, handleRestore and handleClose.
+ */
 
 const useDeletedPostIt = ({ id, content, showModal }: IPostItWithEvent) => {
 	const dispatch = useDispatch();
 
-	// Show or hide the custom context menu
-	const [isShown, setIsShown] = useState(false);
-
-	// Show the custom context menu
-	const handleOnContextMenu = (event: MouseEvent<HTMLDivElement>) => {
-		// Disable the default context menu
-		event.preventDefault();
-		setIsShown(true);
-	};
-
-	const hideContextMenu = () => {
-		setIsShown(false);
-	};
-
+	/**
+	 * It dispatches a delete action, then dispatches an action that restores the post-it
+	 */
 	const handleRestore = () => {
 		dispatch(deletePostIt(id));
 		dispatch(restorePostIt({ id, content }));
-		hideContextMenu();
 	};
 
+	/**
+	 * It takes the id and content of the post it that was just closed, and then passes it to the showModal
+	 * function to delete permanetly the post it
+	 */
 	const handleClose = () => showModal({ id, content });
 
 	return {
-		isShown,
-		hideContextMenu,
 		handleRestore,
-		handleOnContextMenu,
 		handleClose,
 	};
 };
