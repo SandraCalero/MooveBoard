@@ -1,4 +1,13 @@
-![logo](/home/sandracalero/moveeboard/public/logo192.png)
+<div align="center">
+  <a href="https://mooveboard.herokuapp.com/">
+    <img
+      height="205"
+      width="200"
+      alt="logoMooveBoard"
+      src="https://user-images.githubusercontent.com/85451781/172500870-aae1d6ce-b44c-4fe8-a1cc-dc6c7ae47030.png"
+    />
+  </a>
+</div>
 
 ## Moove Board
 
