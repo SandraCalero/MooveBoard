@@ -30,6 +30,17 @@ const trashspaceSlice = createSlice({
 				JSON.stringify(state.deletedPostIts)
 			);
 		},
+		addAllToTrash: (state, action: PayloadAction<Array<IPostIt>>) => {
+			const newDeletedPostIts = action.payload.map((postIt) => ({
+				id: postIt.id,
+				content: postIt.content,
+			}));
+			state.deletedPostIts = [...state.deletedPostIts, ...newDeletedPostIts];
+			localStorage.setItem(
+				'deletedPostIts',
+				JSON.stringify(state.deletedPostIts)
+			);
+		},
 		clearTrashBin: (state) => {
 			state.deletedPostIts = [];
 			localStorage.setItem(
@@ -50,7 +61,7 @@ const trashspaceSlice = createSlice({
 	},
 });
 
-export const { addPostItToTrash, clearTrashBin, deletePostIt } =
+export const { addPostItToTrash, addAllToTrash, clearTrashBin, deletePostIt } =
 	trashspaceSlice.actions;
 
 export default trashspaceSlice.reducer;

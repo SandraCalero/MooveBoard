@@ -2,6 +2,7 @@ import Button from 'components/atoms/Button/Button';
 import TrashBinLink from 'components/molecules/TrashBinLink/TrashBinLink';
 import Header from 'components/organisms/Header/Header';
 import newPostIt from 'assets/icons/newPostIt.png';
+import sendAllToTrash from 'assets/icons/sendAllToTrash.png';
 import PostItEditableList from 'components/organisms/PostItEditableList/PostItEditableList';
 import Modal from 'components/molecules/Modal/Modal';
 import useWorkspace from './useWorkspace';
@@ -15,34 +16,45 @@ export default function Workspace() {
 		hideModal,
 		showModal,
 		handleCreatePostIt,
+		handleMoveAllToTrash,
 		handleDarkMode,
 	} = useWorkspace();
 
 	return (
-		<section className='overflow-y-scroll h-full flex flex-col'>
+		<main className='overflow-y-scroll h-full flex flex-col'>
 			<Header>
 				<Button
-					variant='w-20 h-20 z-10'
+					variant='w-20 h-20'
 					icon={newPostIt}
 					altText='Create new Post It'
 					onClick={handleCreatePostIt}
 				/>
+				<Button
+					variant='w-20 h-20 '
+					text='Delete All'
+					icon={sendAllToTrash}
+					altText='Send All to Trash Bin'
+					onClick={handleMoveAllToTrash}
+				/>
 				<TrashBinLink />
 			</Header>
-			<h1
-				className='m-2 text-center text-grey dark:text-mine-shaft-400
+			<section>
+				<h1
+					className='m-2 text-center text-grey dark:text-mine-shaft-400
 				transition-colors'
-			>
-				Workspace
-			</h1>
-			<PostItEditableList postItList={postItList} showModal={showModal} />
-			<Modal
-				title='Move post it to the trash'
-				message='Are you sure you want to move this post it to the trash?'
-				isModalOpen={isModalOpen}
-				onConfirm={movePostItToTrash}
-				onCancel={hideModal}
-			/>
+				>
+					Workspace
+				</h1>
+				<PostItEditableList postItList={postItList} showModal={showModal} />
+				<Modal
+					title='Move post it to the trash'
+					message='Are you sure you want to move this post it to the trash?'
+					isModalOpen={isModalOpen}
+					onConfirm={movePostItToTrash}
+					onCancel={hideModal}
+				/>
+			</section>
+
 			<Button
 				variant='w-20 fixed bottom-2 right-4 bg-blue text-white p-2
 				hover:opacity-100 font-medium after:absolute after:right-1
@@ -54,6 +66,6 @@ export default function Workspace() {
 				text={modeText}
 				onClick={handleDarkMode}
 			/>
-		</section>
+		</main>
 	);
 }
