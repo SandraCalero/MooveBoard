@@ -1,3 +1,4 @@
+/* Defining the interfaces for the PostIt component. */
 export interface IPostIt {
 	id: number;
 	content?: string;

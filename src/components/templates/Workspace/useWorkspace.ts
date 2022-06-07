@@ -29,6 +29,7 @@ import orderDES from 'assets/icons/orderDES.png';
  * handleDarkMode,
  */
 const useWorkspace = () => {
+	/* A hook that returns a reference to the dispatch function from the Redux store. */
 	const dispatch = useDispatch();
 
 	/* Selectors */
