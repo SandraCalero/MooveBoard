@@ -17,7 +17,7 @@ export default function DeletedPostIt({
 	return (
 		<div
 			className='flex flex-col items-center justify-center bg-yellow
-			shadow-xl w-max dark:bg-cerulean-500 dark:shadow-xl
+			shadow-xl w-max dark:bg-cerulean-500 dark:shadow-lg
 			dark:shadow-cerulean-700 transition-colors dark:border
 			dark:border-grey dark:text-mine-shaft-600'
 			id={id.toString()}
@@ -42,7 +42,7 @@ export default function DeletedPostIt({
 					text='X'
 				/>
 			</div>
-			<div className='break-words p-2 w-52 basis-52  bg-transparent'>
+			<div className='break-words p-2 w-52 basis-52 bg-transparent'>
 				{content}
 			</div>
 		</div>

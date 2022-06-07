@@ -55,6 +55,14 @@ const workspaceSlice = createSlice({
 			state.postItList.push({ ...action.payload, disabled: true });
 			localStorage.setItem('postItList', JSON.stringify(state.postItList));
 		},
+		restoreAllPostIts: (state, action: PayloadAction<Array<IPostIt>>) => {
+			const restoredPostIts = action.payload.map((postIt) => ({
+				...postIt,
+				disabled: true,
+			}));
+			state.postItList = [...state.postItList, ...restoredPostIts];
+			localStorage.setItem('postItList', JSON.stringify(state.postItList));
+		},
 		moveToTrash: (state, action: PayloadAction<PostItId>) => {
 			const postItIndex = state.postItList.findIndex(
 				(postIt) => postIt.id === action.payload.id
@@ -62,12 +70,8 @@ const workspaceSlice = createSlice({
 			state.postItList.splice(postItIndex, 1);
 			localStorage.setItem('postItList', JSON.stringify(state.postItList));
 		},
-		restoreAllPostIts: (state, action: PayloadAction<Array<IPostIt>>) => {
-			const restoredPostIts = action.payload.map((postIt) => ({
-				...postIt,
-				disabled: true,
-			}));
-			state.postItList = [...state.postItList, ...restoredPostIts];
+		moveAllToTrash: (state) => {
+			state.postItList = [];
 			localStorage.setItem('postItList', JSON.stringify(state.postItList));
 		},
 		editPostIt(state, action: PayloadAction<IPostIt>) {
@@ -89,8 +93,9 @@ const workspaceSlice = createSlice({
 export const {
 	createPostIt,
 	restorePostIt,
-	moveToTrash,
 	restoreAllPostIts,
+	moveToTrash,
+	moveAllToTrash,
 	editPostIt,
 	switchToDarkMode,
 } = workspaceSlice.actions;
