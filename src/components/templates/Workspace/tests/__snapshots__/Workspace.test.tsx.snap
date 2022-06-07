@@ -53,19 +53,27 @@ exports[`<Workspace /> should match the snapshot 1`] = `
       >
         Workspace
       </h1>
-      <button
-        class="flex flex-col items-center justify-center border-none
-			m-2 p-0	bg-transparent hover:opacity-90 active:translate-y-1 !flex-row first:!w-6 first:!h-6"
-        name="button"
-        type="button"
+      <div
+        class="px-4 flex justify-start items-center"
       >
-        <img
-          alt=""
-          class="h-4/5 w-4/5"
-          src="orderASC.png"
-        />
-        Order by oldest
-      </button>
+        <button
+          class="flex flex-col items-center justify-center border-none
+			m-2 p-0	bg-transparent hover:opacity-90 active:translate-y-1 h-10 w-10"
+          name="button"
+          type="button"
+        >
+          <img
+            alt=""
+            class="h-4/5 w-4/5"
+            src="orderASC.png"
+          />
+        </button>
+        <span
+          class="text-sm m-0 p-0"
+        >
+          Order by oldest
+        </span>
+      </div>
       <ul
         class="grid grid-cols-auto p-4 m-0 list-none gap-4 justify-center"
       >
