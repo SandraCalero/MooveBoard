@@ -2,7 +2,7 @@
 
 exports[`<Workspace /> should match the snapshot 1`] = `
 <div>
-  <section
+  <main
     class="overflow-y-scroll h-full flex flex-col"
   >
     <header
@@ -10,7 +10,7 @@ exports[`<Workspace /> should match the snapshot 1`] = `
     >
       <button
         class="flex flex-col items-center justify-center border-none
-			m-2 p-0	bg-transparent hover:opacity-90 active:translate-y-1 w-20 h-20 z-10"
+			m-2 p-0	bg-transparent hover:opacity-90 active:translate-y-1 w-20 h-20"
         name="button"
         type="button"
       >
@@ -19,6 +19,19 @@ exports[`<Workspace /> should match the snapshot 1`] = `
           class="h-4/5 w-4/5"
           src="newPostIt.png"
         />
+      </button>
+      <button
+        class="flex flex-col items-center justify-center border-none
+			m-2 p-0	bg-transparent hover:opacity-90 active:translate-y-1 w-20 h-20 "
+        name="button"
+        type="button"
+      >
+        <img
+          alt="Send All to Trash Bin"
+          class="h-4/5 w-4/5"
+          src="sendAllToTrash.png"
+        />
+        Delete All
       </button>
       <a
         class="flex flex-col items-center no-underline p-0 m-2 text-center hover:opacity-90 active:translate-y-1"
@@ -34,89 +47,103 @@ exports[`<Workspace /> should match the snapshot 1`] = `
         </span>
       </a>
     </header>
-    <h1
-      class="m-2 text-center text-grey dark:text-mine-shaft-400 transition-colors"
-    >
-      Workspace
-    </h1>
-    <ul
-      class="grid grid-cols-auto p-4 m-0 list-none gap-4 justify-center"
-    >
-      <li
-        class="justify-self-center"
+    <section>
+      <h1
+        class="m-2 text-center text-grey dark:text-mine-shaft-400 transition-colors"
       >
-        <div
-          aria-hidden="true"
-          class="flex flex-col items-center justify-center bg-yellow shadow-xl w-max md:absolute md:cursor-grab dark:bg-cerulean-500 dark:shadow-xl dark:shadow-cerulean-700 transition-colors dark:border dark:border-grey dark:text-mine-shaft-600"
-          draggable="true"
-          id="1"
+        Workspace
+      </h1>
+      <button
+        class="flex flex-col items-center justify-center border-none
+			m-2 p-0	bg-transparent hover:opacity-90 active:translate-y-1 !flex-row first:!w-6 first:!h-6"
+        name="button"
+        type="button"
+      >
+        <img
+          alt=""
+          class="h-4/5 w-4/5"
+          src="orderASC.png"
+        />
+        Order by oldest
+      </button>
+      <ul
+        class="grid grid-cols-auto p-4 m-0 list-none gap-4 justify-center"
+      >
+        <li
+          class="justify-self-center"
         >
-          <button
-            class="flex flex-col items-center justify-center border-none
+          <div
+            aria-hidden="true"
+            class="flex flex-col items-center justify-center bg-yellow shadow-xl w-max dark:bg-cerulean-500 dark:shadow-lg dark:shadow-cerulean-700 transition-colors dark:border dark:border-grey dark:text-mine-shaft-600"
+            id="1"
+          >
+            <button
+              class="flex flex-col items-center justify-center border-none
 			m-2 p-0	bg-transparent hover:opacity-90 active:translate-y-1 my-0 mx-0 px-2 pt-2 opacity-20 text-xl hover:opacity-100 self-end dark:text-mine-shaft-900 dark:opacity-40 dark:hover:opacity-100 transition-colors"
-            name="button"
-            type="button"
-          >
-            X
-          </button>
-          <textarea
-            class="p-2 w-52 h-52 bg-transparent outline-none border-none resize-y md:resize md:cursor-grab focus:cursor-text"
-            disabled=""
-            name="note"
-          >
-            Testing edit post it action
-          </textarea>
-        </div>
-      </li>
-    </ul>
-    <div
-      class="hidden items-center justify-center z-10 m-0 p-0 w-full
-			h-full absolute inset-0 bg-transparent"
-    >
+              name="button"
+              type="button"
+            >
+              X
+            </button>
+            <textarea
+              class="p-2 w-52 h-52 bg-transparent outline-none border-none resize-y focus:cursor-text"
+              disabled=""
+              name="note"
+            >
+              Testing edit post it action
+            </textarea>
+          </div>
+        </li>
+      </ul>
       <div
-        class="flex flex-col justify-center items-center bg-white max-w-xs h-auto rounded-lg shadow-2xl shadow-mine-shaft-900 dark:shadow-cerulean-700 dark:bg-cerulean-900 dark:border-none transition-colors"
+        class="hidden items-center justify-center z-10 m-0 p-0 w-full
+			h-full absolute inset-0 bg-transparent"
       >
-        <h2
-          class="flex items-center p-3 m-2"
-        >
-          Move post it to the trash
-        </h2>
         <div
-          class="flex items-center p-3 m-0 border-y border-solid border-grey"
+          class="flex flex-col justify-center items-center bg-white max-w-xs h-auto rounded-lg shadow-2xl shadow-mine-shaft-900 dark:shadow-cerulean-700 dark:bg-cerulean-900 dark:border-none transition-colors"
         >
-          <img
-            alt="Warning icon"
-            class="m-2 w-10"
-            src="warning.png"
-          />
-          <p
-            class="m-2 text-sm "
+          <h2
+            class="flex items-center p-3 m-2"
           >
-            Are you sure you want to move this post it to the trash?
-          </p>
-        </div>
-        <div
-          class="flex items-center p-3 m-0"
-        >
-          <button
-            class="flex flex-col items-center justify-center border-none
+            Move post it to the trash
+          </h2>
+          <div
+            class="flex items-center p-3 m-0 border-y border-solid border-grey"
+          >
+            <img
+              alt="Warning icon"
+              class="m-2 w-10"
+              src="warning.png"
+            />
+            <p
+              class="m-2 text-sm "
+            >
+              Are you sure you want to move this post it to the trash?
+            </p>
+          </div>
+          <div
+            class="flex items-center p-3 m-0"
+          >
+            <button
+              class="flex flex-col items-center justify-center border-none
 			m-2 p-0	bg-transparent hover:opacity-90 active:translate-y-1 justify-center w-24 h-12 rounded-lg bg-grey dark:bg-mine-shaft-500 dark:text-white transition-colors"
-            name="button"
-            type="button"
-          >
-            Cancel
-          </button>
-          <button
-            class="flex flex-col items-center justify-center border-none
+              name="button"
+              type="button"
+            >
+              Cancel
+            </button>
+            <button
+              class="flex flex-col items-center justify-center border-none
 			m-2 p-0	bg-transparent hover:opacity-90 active:translate-y-1 justify-center w-24 h-12 rounded-lg bg-blue text-white dark:text-blue dark:bg-white font-semibold transition-colors"
-            name="button"
-            type="button"
-          >
-            Confirm
-          </button>
+              name="button"
+              type="button"
+            >
+              Confirm
+            </button>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
     <button
       class="flex flex-col items-center justify-center border-none
 			m-2 p-0	bg-transparent hover:opacity-90 active:translate-y-1 w-20 fixed bottom-2 right-4 bg-blue text-white p-2 hover:opacity-100 font-medium after:absolute after:right-1 after:bg-white !items-start	after:rounded-full after:p-1 after:w-8 after:h-8 after:text-sm active:translate-y-0 dark:!items-end dark:after:left-1 dark:after:bg-blue dark:bg-white dark:text-blue rounded-3xl transition-colors transition-transform duration-300 md:w-24"
@@ -125,6 +152,6 @@ exports[`<Workspace /> should match the snapshot 1`] = `
     >
       Dark
     </button>
-  </section>
+  </main>
 </div>
 `;
