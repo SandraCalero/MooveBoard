@@ -12,11 +12,14 @@ export default function Workspace() {
 		isModalOpen,
 		postItList,
 		modeText,
+		iconOrderBy,
+		textOrderBy,
 		movePostItToTrash,
 		hideModal,
 		showModal,
 		handleCreatePostIt,
 		handleMoveAllToTrash,
+		handleOrderByDate,
 		handleDarkMode,
 	} = useWorkspace();
 
@@ -45,6 +48,15 @@ export default function Workspace() {
 				>
 					Workspace
 				</h1>
+				<div className='px-4 flex justify-start items-center'>
+					<Button
+						variant='h-10 w-10'
+						icon={iconOrderBy}
+						onClick={handleOrderByDate}
+					/>
+					<span className='text-sm m-0 p-0'>{textOrderBy}</span>
+				</div>
+
 				<PostItEditableList postItList={postItList} showModal={showModal} />
 				<Modal
 					title='Move post it to the trash'

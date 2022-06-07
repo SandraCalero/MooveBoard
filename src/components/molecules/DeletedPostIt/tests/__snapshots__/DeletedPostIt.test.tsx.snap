@@ -4,7 +4,7 @@ exports[`<DeletedPostIt /> should match the snapshot 1`] = `
 <div>
   <div
     aria-hidden="true"
-    class="flex flex-col items-center justify-center bg-yellow shadow-xl w-max dark:bg-cerulean-500 dark:shadow-xl dark:shadow-cerulean-700 transition-colors dark:border dark:border-grey dark:text-mine-shaft-600"
+    class="flex flex-col items-center justify-center bg-yellow shadow-xl w-max dark:bg-cerulean-500 dark:shadow-lg dark:shadow-cerulean-700 transition-colors dark:border dark:border-grey dark:text-mine-shaft-600"
     id="1"
   >
     <div
@@ -32,7 +32,7 @@ exports[`<DeletedPostIt /> should match the snapshot 1`] = `
       </button>
     </div>
     <div
-      class="break-words p-2 w-52 basis-52  bg-transparent"
+      class="break-words p-2 w-52 basis-52 bg-transparent"
     >
       Testing Deleted Post It
     </div>

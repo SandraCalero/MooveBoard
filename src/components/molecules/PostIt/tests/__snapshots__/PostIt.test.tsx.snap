@@ -4,8 +4,7 @@ exports[`<PostIt /> should match the snapshot 1`] = `
 <div>
   <div
     aria-hidden="true"
-    class="flex flex-col items-center justify-center bg-yellow shadow-xl w-max md:absolute md:cursor-grab dark:bg-cerulean-500 dark:shadow-xl dark:shadow-cerulean-700 transition-colors dark:border dark:border-grey dark:text-mine-shaft-600"
-    draggable="true"
+    class="flex flex-col items-center justify-center bg-yellow shadow-xl w-max dark:bg-cerulean-500 dark:shadow-lg dark:shadow-cerulean-700 transition-colors dark:border dark:border-grey dark:text-mine-shaft-600"
     id="1"
   >
     <button
@@ -17,7 +16,7 @@ exports[`<PostIt /> should match the snapshot 1`] = `
       X
     </button>
     <textarea
-      class="p-2 w-52 h-52 bg-transparent outline-none border-none resize-y md:resize md:cursor-grab focus:cursor-text"
+      class="p-2 w-52 h-52 bg-transparent outline-none border-none resize-y focus:cursor-text"
       disabled=""
       name="note"
     >

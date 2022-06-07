@@ -1,6 +1,6 @@
 /* eslint-disable no-param-reassign */
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { IPostIt } from 'globals/definitions/postItProps';
+import { IPostIt, IPostItEditable } from 'globals/definitions/postItProps';
 
 interface trashspaceStateProps {
 	deletedPostIts: Array<IPostIt>;
@@ -30,7 +30,7 @@ const trashspaceSlice = createSlice({
 				JSON.stringify(state.deletedPostIts)
 			);
 		},
-		addAllToTrash: (state, action: PayloadAction<Array<IPostIt>>) => {
+		addAllToTrash: (state, action: PayloadAction<Array<IPostItEditable>>) => {
 			const newDeletedPostIts = action.payload.map((postIt) => ({
 				id: postIt.id,
 				content: postIt.content,
