@@ -9,19 +9,19 @@
   </a>
 </div>
 
-## Moove Board
+# Moove Board
 
 This repository contains the moove board application for the Coding Challenge: Post It Notes App for MooveCamp 2022.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) using the [typescript template](https://create-react-app.dev/docs/getting-started#selecting-a-template)
 
-# Prerequisites
+## Prerequisites
 
 - Node js: https://nodejs.dev/download
 - npm: https://www.npmjs.com/package/npm
 - VS(recommended): https://code.visualstudio.com/
 
-# Most important dependencies!
+## Most important dependencies!
 
 This project includes the next libraries, you could read the official documentation.
 
@@ -33,7 +33,7 @@ This project includes the next libraries, you could read the official documentat
 - typescript: https://www.typescriptlang.org/docs/
 - tailwindcss: https://tailwindcss.com/
 
-# Most important dev dependencies!
+## Most important dev dependencies!
 
 - eslint: https://eslint.org/
 - husky: https://typicode.github.io/husky/#/
@@ -83,7 +83,7 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-# Installation
+## Installation
 
 To install this application, you should follow the steps below:
 
@@ -91,7 +91,7 @@ To install this application, you should follow the steps below:
 
 2. Run: `npm -i` or `npm install`
 
-# Usage
+## Usage
 
 To use this application locally, you should follow these steps below:
 
@@ -101,9 +101,9 @@ To use this application locally, you should follow these steps below:
 
 3. The browser will open the web app at http://localhost:3000. You can also use the app from another device using the IP address of the local network.
 
-# Considerations:
+## Considerations:
 
-## About Branching and Commits
+### About Branching and Commits
 
 Branch convention is based on the [gitflow workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) specification, instead of a single main branch, this workflow uses two branches to record the history of the project. The main branch stores the official release history, and the develop branch serves as an integration branch for features.
 
@@ -141,7 +141,7 @@ Follow this steps when you do a commit :
     UPD: readme file
 ```
 
-## About Tests
+### About Tests
 
 **Execute test:**
 
@@ -149,13 +149,13 @@ Follow this steps when you do a commit :
     npm test
 ```
 
-# Contributing
+## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 Please make sure to update tests as appropriate.
 
-# Authors
+## Authors
 
 Sandra Calero - [linkedin](https://www.linkedin.com/in/sandra-liliana-calero/)
 Project for [Moove It](https://moove-it.com/)
