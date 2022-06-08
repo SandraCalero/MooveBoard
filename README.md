@@ -19,20 +19,33 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Features
 
-- Create a new Post it.
-- See all Post its in the workspace.
-- Edit a Post it.
-- Move a Post it to the trash bin.
-- Move all Post its to the trash bin.
-- Open the trash bin to see all Post its that have been moved there.
-- Move a Post it from the trash bin to the workspace.
-- Move all Post its from the trash bin to the workspace.
-- Permanently delete a Post it in the trash bin.
-- Permanently delete all Post its in the trash bin.
-- See if the trash bin has Post its by looking the trash bin icon.
-- Toggle between dark mode and light mode.
-- Order by newest or oldest
-- Responsive design
+### Create a new Post it.
+
+### See all Post its in the workspace.
+
+### Edit a Post it.
+
+### Move a Post it to the trash bin.
+
+### Move all Post its to the trash bin.
+
+### Open the trash bin to see all Post its that have been moved there.
+
+### Move a Post it from the trash bin to the workspace.
+
+### Move all Post its from the trash bin to the workspace.
+
+### Permanently delete a Post it in the trash bin.
+
+### Permanently delete all Post its in the trash bin.
+
+### See if the trash bin has Post its by looking the trash bin icon.
+
+### Toggle between dark mode and light mode.
+
+### Order by newest or oldest
+
+### Responsive design
 
 ## Prerequisites
 
@@ -141,11 +154,13 @@ For the components we must make the import of the render method that is obtained
 
 **Execute test:**
 
-Execute the command `npm test` to launch the test runner in the interactive watch mode.
+Use command `npm test` to launch the test runner in the interactive watch mode.
 
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### Deployment
+
+This application is deployed on Heroku using the github connection. The main branch is synconized with heroku so all the updates made on this branch will be deployed in the url https://mooveboard.herokuapp.com/.
 
 ## Contributing
 
