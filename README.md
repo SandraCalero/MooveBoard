@@ -13,7 +13,7 @@
 
 This repository contains the moove board application for the Coding Challenge: Post It Notes App for MooveCamp 2022.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) using the [typescript template](https://create-react-app.dev/docs/getting-started#selecting-a-template)
 
 # Prerequisites
 
@@ -82,3 +82,97 @@ If you aren’t satisfied with the build tool and configuration choices, you can
 Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+# Installation
+
+To install this application, you should follow the steps below:
+
+1. Clone this repo:
+
+```
+    git clone https://github.com/SandraCalero/MooveBoard.git
+```
+
+2. Run:
+
+```
+    npm -i
+```
+
+or
+
+```
+    npm install
+```
+
+# Usage
+
+To use this application locally, you should follow these steps below:
+
+1. Install the web application according to the [above steps](#installation)
+
+2. Run `npm start`.
+
+3. The browser will open the web app at http://localhost:3000. You can also use the app from another device using the IP address of the local network.
+
+# Considerations:
+
+## About Branching and Commits
+
+Branch convention is based on the [gitflow workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) specification, instead of a single main branch, this workflow uses two branches to record the history of the project. The main branch stores the official release history, and the develop branch serves as an integration branch for features.
+
+**Branching Workflow:**
+
+- create a develop(parent) branch to serve as an integration branch for the features.
+- create a branch for each activity or feature, e.g. "redux" or "create-post-it".
+- merge all work on develop branch and create merge request
+
+Example:
+
+- develop -> redux
+- redux -> develop
+
+**Note:** The main branch is used to deployment.
+
+Follow this steps when you do a commit :
+
+1. JS linter: It is executed automatically when committing. For this the command `npx mrm@2 lint-staged` was used, this command will install and configure husky and lint-staged based on the code quality tools from this project's package.json dependencies.
+
+2. Unit tests must pass completely.
+
+3. Commit messages should begin with the first three letters of the activity that was performed, followed by where where the implementation took place.
+
+   - Must be one of the following:
+
+   **ADD**: when something was added to the project
+   **UPD**: when there was an update
+   **FIX**: when an error was fixed
+   **DEL**: when something was deleted
+
+   **IE commit message:**
+
+```
+
+       UPD: readme file
+
+```
+
+## About Tests
+
+**Execute test:**
+
+```
+
+    npm test
+
+```
+
+# Contributing
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
+
+# License
+
+[MIT](https://choosealicense.com/licenses/mit/)
