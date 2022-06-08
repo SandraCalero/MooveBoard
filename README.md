@@ -17,6 +17,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## [Try Demo Now!](https://mooveboard.herokuapp.com/)
 
+## Features
+
 ## Prerequisites
 
 - Node js: https://nodejs.dev/download
@@ -64,7 +66,15 @@ To use this application locally, you should follow these steps below:
 
 4. The page will reload when you make changes and you will also see any lint errors in the console.
 
+### Redux DevTools
+
+To use redux and validate its use in the DEV environment, install the chrome extension [Redux DevTools](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd)
+
 ## Considerations:
+
+### About structure
+
+Atomic design
 
 ### About Branching and Commits
 
@@ -106,11 +116,20 @@ Follow this steps when you do a commit :
 
 ### About Tests
 
-**Execute test:**
+In the project we can test two important elements such as components and hooks. However, there are only tests created for the components.
+For the components we must make the import of the render method that is obtained from path `utils/tests/test-utils`.
 
 ```
-    npm test
+    import { render } from 'utils/tests/test-utils';
 ```
+
+**Execute test:**
+
+Execute the command `npm test` to launch the test runner in the interactive watch mode.
+
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+### Deployment
 
 ## Contributing
 
