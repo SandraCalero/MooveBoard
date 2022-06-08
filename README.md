@@ -21,35 +21,59 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ### Create a new Post it.
 
-### See all Post its in the workspace.
+![create_postIt](https://user-images.githubusercontent.com/85451781/172679608-0fe75c48-4bfa-468c-8fd8-16133fd6183c.gif)
 
+### See all Post its in the workspace.
+<img
+     width="450"
+     alt="workspace"
+     src="https://user-images.githubusercontent.com/85451781/172681213-f06e6dcd-760b-4eca-9cb0-27154623be90.png"
+/>
 ### Edit a Post it.
+![edit_postIt](https://user-images.githubusercontent.com/85451781/172684440-6fccd552-7878-4371-9460-6355737e9f5c.gif)
+
 
 ### Move a Post it to the trash bin.
+![moveToTrash](https://user-images.githubusercontent.com/85451781/172685236-fdc94c1f-229e-473f-8aba-7d744ff6c290.gif)
 
 ### Move all Post its to the trash bin.
+![move_all_to_trash](https://user-images.githubusercontent.com/85451781/172688059-372e747a-bb27-4150-8fd3-fb04ec79b4fa.gif)
 
 ### Open the trash bin to see all Post its that have been moved there.
+![open_trash](https://user-images.githubusercontent.com/85451781/172689567-ff7edb8a-5c73-45c9-abba-e8b2b0113028.gif)
 
 ### Move a Post it from the trash bin to the workspace.
+![restore_postIt](https://user-images.githubusercontent.com/85451781/172690787-ec33ec96-182c-423b-a149-86e8b0652bf7.gif)
+
 
 ### Move all Post its from the trash bin to the workspace.
+![restore_all](https://user-images.githubusercontent.com/85451781/172692130-a606c73e-81c3-4222-a1d7-5e58e5df45e8.gif)
 
 ### Permanently delete a Post it in the trash bin.
+![delete_postIt](https://user-images.githubusercontent.com/85451781/172699344-6c40ebcf-e071-4337-b971-f91184a26e21.gif)
+
 
 ### Permanently delete all Post its in the trash bin.
+![delete_all](https://user-images.githubusercontent.com/85451781/172701778-d7321fd6-129b-4b4d-b8a0-a60c77298837.gif)
 
 ### See if the trash bin has Post its by looking the trash bin icon.
+   - **Trash bin is empty**
+   
+   ![empty_trash_bin](https://user-images.githubusercontent.com/85451781/172695182-588c011c-11ff-4342-88be-ec54ba1928b4.png)
+   
+   - **Trash bin is not empty**
+   
+   ![not_empty_trash_bin](https://user-images.githubusercontent.com/85451781/172695201-be936c04-5b5b-4a83-9aba-2d4ed7fa4438.png)
 
 ### Toggle between dark mode and light mode.
+![toogle_dark_mode](https://user-images.githubusercontent.com/85451781/172693248-1689a8e9-4c9c-4f75-bf85-6c664adfe960.gif)
 
 ### Order by newest or oldest
+![order](https://user-images.githubusercontent.com/85451781/172694301-d49d257f-d947-4511-b001-c4357c9a6aeb.gif)
 
 ### Responsive design
 
 ![responsive](https://user-images.githubusercontent.com/85451781/172670693-4acc38f0-872c-49ed-9b19-ba69c8b45437.gif)
-
-
 
 ## Prerequisites
 
