@@ -173,6 +173,7 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 Please make sure to update tests as appropriate.
 
-# License
+# Authors
 
-[MIT](https://choosealicense.com/licenses/mit/)
+Sandra Calero - [linkedin](https://www.linkedin.com/in/sandra-liliana-calero/)
+Project for [Moove It](https://moove-it.com/)
