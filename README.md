@@ -9,13 +9,14 @@
   </a>
 </div>
 
-# Moove Board
+<h1 align="center"> Moove Board </h1>
+<h2 align="center"><a href="https://mooveboard.herokuapp.com/">Try Demo Now!</a></h2>
+
 
 This repository contains the moove board application for the Coding Challenge: Post It Notes App for MooveCamp 2022.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) using the [typescript template](https://create-react-app.dev/docs/getting-started#selecting-a-template)
 
-## [Try Demo Now!](https://mooveboard.herokuapp.com/)
 
 ## Features
 
