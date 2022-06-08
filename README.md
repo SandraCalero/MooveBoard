@@ -87,23 +87,9 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 To install this application, you should follow the steps below:
 
-1. Clone this repo:
+1. Clone this repo: `git clone https://github.com/SandraCalero/MooveBoard.git`
 
-```
-    git clone https://github.com/SandraCalero/MooveBoard.git
-```
-
-2. Run:
-
-```
-    npm -i
-```
-
-or
-
-```
-    npm install
-```
+2. Run: `npm -i` or `npm install`
 
 # Usage
 
@@ -152,9 +138,7 @@ Follow this steps when you do a commit :
    **IE commit message:**
 
 ```
-
-       UPD: readme file
-
+    UPD: readme file
 ```
 
 ## About Tests
@@ -162,9 +146,7 @@ Follow this steps when you do a commit :
 **Execute test:**
 
 ```
-
     npm test
-
 ```
 
 # Contributing
