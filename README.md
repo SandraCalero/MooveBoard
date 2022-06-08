@@ -47,6 +47,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ### Responsive design
 
+![responsive](https://user-images.githubusercontent.com/85451781/172670693-4acc38f0-872c-49ed-9b19-ba69c8b45437.gif)
+
+
+
 ## Prerequisites
 
 - Node js: https://nodejs.dev/download
