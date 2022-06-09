@@ -12,11 +12,9 @@
 <h1 align="center"> Moove Board </h1>
 <h2 align="center"><a href="https://mooveboard.herokuapp.com/">Try Demo Now!</a></h2>
 
-
 This repository contains the moove board application for the Coding Challenge: Post It Notes App for MooveCamp 2022.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) using the [typescript template](https://create-react-app.dev/docs/getting-started#selecting-a-template)
-
 
 ## Features
 
@@ -25,51 +23,61 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ![create_postIt](https://user-images.githubusercontent.com/85451781/172679608-0fe75c48-4bfa-468c-8fd8-16133fd6183c.gif)
 
 ### See all Post its in the workspace.
+
 <img
      width="450"
      alt="workspace"
      src="https://user-images.githubusercontent.com/85451781/172681213-f06e6dcd-760b-4eca-9cb0-27154623be90.png"
 />
+
 ### Edit a Post it.
+
 ![edit_postIt](https://user-images.githubusercontent.com/85451781/172684440-6fccd552-7878-4371-9460-6355737e9f5c.gif)
 
-
 ### Move a Post it to the trash bin.
+
 ![moveToTrash](https://user-images.githubusercontent.com/85451781/172685236-fdc94c1f-229e-473f-8aba-7d744ff6c290.gif)
 
 ### Move all Post its to the trash bin.
+
 ![move_all_to_trash](https://user-images.githubusercontent.com/85451781/172688059-372e747a-bb27-4150-8fd3-fb04ec79b4fa.gif)
 
 ### Open the trash bin to see all Post its that have been moved there.
+
 ![open_trash](https://user-images.githubusercontent.com/85451781/172689567-ff7edb8a-5c73-45c9-abba-e8b2b0113028.gif)
 
 ### Move a Post it from the trash bin to the workspace.
+
 ![restore_postIt](https://user-images.githubusercontent.com/85451781/172690787-ec33ec96-182c-423b-a149-86e8b0652bf7.gif)
 
-
 ### Move all Post its from the trash bin to the workspace.
+
 ![restore_all](https://user-images.githubusercontent.com/85451781/172692130-a606c73e-81c3-4222-a1d7-5e58e5df45e8.gif)
 
 ### Permanently delete a Post it in the trash bin.
+
 ![delete_postIt](https://user-images.githubusercontent.com/85451781/172699344-6c40ebcf-e071-4337-b971-f91184a26e21.gif)
 
-
 ### Permanently delete all Post its in the trash bin.
+
 ![delete_all](https://user-images.githubusercontent.com/85451781/172701778-d7321fd6-129b-4b4d-b8a0-a60c77298837.gif)
 
 ### See if the trash bin has Post its by looking the trash bin icon.
-   - **Trash bin is empty**
-   
-   ![empty_trash_bin](https://user-images.githubusercontent.com/85451781/172695182-588c011c-11ff-4342-88be-ec54ba1928b4.png)
-   
-   - **Trash bin is not empty**
-   
-   ![not_empty_trash_bin](https://user-images.githubusercontent.com/85451781/172695201-be936c04-5b5b-4a83-9aba-2d4ed7fa4438.png)
+
+- **Trash bin is empty**
+
+![empty_trash_bin](https://user-images.githubusercontent.com/85451781/172695182-588c011c-11ff-4342-88be-ec54ba1928b4.png)
+
+- **Trash bin is not empty**
+
+![not_empty_trash_bin](https://user-images.githubusercontent.com/85451781/172695201-be936c04-5b5b-4a83-9aba-2d4ed7fa4438.png)
 
 ### Toggle between dark mode and light mode.
+
 ![toogle_dark_mode](https://user-images.githubusercontent.com/85451781/172693248-1689a8e9-4c9c-4f75-bf85-6c664adfe960.gif)
 
 ### Order by newest or oldest
+
 ![order](https://user-images.githubusercontent.com/85451781/172694301-d49d257f-d947-4511-b001-c4357c9a6aeb.gif)
 
 ### Responsive design
@@ -86,13 +94,12 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 This project includes the next libraries, you could read the official documentation.
 
-- react: https://en.reactjs.org/
-- react-scripts: https://github.com/facebook/create-react-app
-- react-router-dom: https://reactrouter.com/docs/en/v6
-- react-redux: https://react-redux.js.org/introduction/getting-started
-- redux-toolkit: https://redux-toolkit.js.org/tutorials/typescript
-- typescript: https://www.typescriptlang.org/docs/
-- tailwindcss: https://tailwindcss.com/
+- [react](https://en.reactjs.org/): It is the library/framework used to build the application.
+- [react-router-dom](https://reactrouter.com/docs/en/v6): The routing of this application is managed with react-router-dom.
+- [react-redux](https://react-redux.js.org/introduction/getting-started): It is used to handle the global state of the application.
+- [redux-toolkit](https://redux-toolkit.js.org/tutorials/typescript): The official toolkit for efficient Redux development.
+- [typescript](https://www.typescriptlang.org/docs/): This project is built using typescript and was created using the template provided by create react app `npx create-react-app my-app --template typescript`
+- [tailwindcss](https://tailwindcss.com/):
 
 ## Most important dev dependencies!
 
@@ -132,7 +139,51 @@ To use redux and validate its use in the DEV environment, install the chrome ext
 
 ### About structure
 
-Atomic design
+The structure of this project is separated into folders by responsibility within the project as follows:
+
+**assets**
+Contains a folder called icons, inside which are all the images used for the icons inside the body of the application.
+
+**components**
+
+The structure used in which the organization of the functional components is based on the methodology of creation of design systems [Atomic Design](https://atomicdesign.bradfrost.com/) from which the following levels were taken:
+
+- Atoms: These are the basic components of matter. Applied to this project, atoms are the smallest component that does not contain other components within itself, such as a button.
+- Molecules: Molecules are groups of atoms bonded together and are the smallest fundamental units of a compound. These molecules acquire their own properties and serve as the backbone of our design systems.
+- Organisms: Organisms are groups of molecules bonded together to form a relatively complex and distinct section of an interface.
+- Templates: Templates consist primarily of groups of organisms joined together to form pages. This is where we begin to see the design as a whole.
+
+Each component stores the following in its own folder:
+
+- The functional component.
+- Its own custom hook files,
+- A folder containing the component's tests
+- If necessary, there would be a file containing the component's styles.
+
+**globals**
+Contains the global constants defined for the project such as the interfaces for the Post It components.
+
+**redux**
+
+This project uses Redux to manage the state of the application. For this reason, the following is a comment about the structure of redux
+
+This project has a root folder called redux structured as follows
+
+    redux
+        reducers
+        store
+
+- **reducers:** Contains the two slices of the redux store, one to handle the state and reducers of the trash bin and the other to handle the state and reducers of the workspace.
+
+- **store:** The store holds the state of the application.
+
+**styles**
+Contains the index.css file inside which there are @tailwind directives for each of Tailwind’s layers.
+
+**utils**
+Contains the utilities necessary for the global use of the application.
+
+The **Root.tsx** component, wraps the application so it is where the provider is located and where the routes of the application are managed.
 
 ### About Branching and Commits
 
@@ -187,9 +238,37 @@ Use command `npm test` to launch the test runner in the interactive watch mode.
 
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
+### About relevant technical decisions made
+
+1. It was decided to use typescript for this project because it is a strongly typed programming language that, as a superset of javascript, is compatible with javascript. It is known to be structured, highly secure and more consistent than vanilla JavaScript, any typescript checking runs at compile time and VSCode allows to visualize typing errors just by understanding the typescript extension of a file so it is possible to check types and identify errors at compile time.
+
+2. This application does not use back end services, for this reason, the application state for the workspace and the trash bin is saved in the local storage.
+
+3. This application follows the Airbnb style guide, to check all files automatically eslint was installed, whose configuration is in the .eslintrc.js file. Additionally prettier is being used as a formatter, and due to conflicts that may arise between eslint and prettier, the .prettierrc file was created to configure prettier so that eslint styles take precedence. It was taken into account that the auto-generated files should not be formatted or taken into account in eslint, so they were listed in the .eslintignore and .prettierignore files.
+
+4. In order to avoid commits of files that do not comply with the style guide configured in the project, the command `npx mrm@2 lint-staged` was used, which creates the husky script that executes the lint-staged that validates the files and prevents the commit of those that do not comply with the eslint.
+
+5. Although the Post-it and the Post-it list of the workspace and the trash bin look the same, their behavior, the type of properties and some characteristics are very different, so managing a single component for the workspace and the trash bin would not follow the SRP since the number of variables and different functions would significantly increase the size of the component.
+
+6. Tailwindcss was used for the styling of the application because it allows to build websites quickly and its mobile first approach makes it easier to develop responsive applications.
+
+### Functional components standard
+
+As an adaptation to airbnb style guide and Typescript we encourage the usage of this function declaration:
+
+    ```
+    export default function Component({ message }: AppProps) {
+      return (
+    	<div>{message}</div>
+    );
+    }
+    ```
+
+As we see in the example above this is a declarative function with **typed props** (props should be an `AppProps` so we could not pass anything different).
+
 ### Deployment
 
-This application is deployed on Heroku using the github connection. The main branch is synconized with heroku so all the updates made on this branch will be deployed in the url https://mooveboard.herokuapp.com/.
+This application is deployed on [Heroku](https://www.heroku.com/) using the github connection. The main branch is synconized with heroku so all the updates made on this branch will be deployed in the url https://mooveboard.herokuapp.com/.
 
 ## Contributing
 
