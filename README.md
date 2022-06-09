@@ -142,10 +142,12 @@ To use redux and validate its use in the development environment, install the ch
 The structure of this project is separated into folders by responsibility within the project as follows:
 
 - **assets**
+
   Contains a folder called icons, inside which are all the images used for the icons inside the body of the application.
 
 - **components**
-  The structure used in which the organization of the functional components is based on the methodology of creation of design systems [Atomic Design](https://atomicdesign.bradfrost.com/) from which the following levels were taken:
+
+  The structure used in which the organization of the functional components is based on the [Atomic Design](https://atomicdesign.bradfrost.com/) system creation methodology from which the following levels were taken:
 
   - Atoms: These are the basic components of matter. Applied to this project, atoms are the smallest component that does not contain other components within itself, such as a button.
   - Molecules: Molecules are groups of atoms bonded together and are the smallest fundamental units of a compound. These molecules acquire their own properties and serve as the backbone of our design systems.
@@ -160,9 +162,11 @@ The structure of this project is separated into folders by responsibility within
   - If necessary, there would be a file containing the component's styles.
 
 - **globals**
+
   Contains the global constants defined for the project such as the interfaces for the Post It components.
 
 - **redux**
+
   This project uses Redux to manage the state of the application. For this reason, the following is a comment about the structure of redux.
   This project has a root folder called redux structured as follows:
 
