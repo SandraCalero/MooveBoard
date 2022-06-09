@@ -98,13 +98,13 @@ This project includes the next libraries, you could read the official documentat
 - [react-router-dom](https://reactrouter.com/docs/en/v6): The routing of this application is managed with react-router-dom.
 - [react-redux](https://react-redux.js.org/introduction/getting-started): It is used to handle the global state of the application.
 - [redux-toolkit](https://redux-toolkit.js.org/tutorials/typescript): The official toolkit for efficient Redux development.
-- [typescript](https://www.typescriptlang.org/docs/): This project is built using typescript and was created using the template provided by create react app `npx create-react-app my-app --template typescript`
-- [tailwindcss](https://tailwindcss.com/): This is the framework used for the styles of the app
+- [typescript](https://www.typescriptlang.org/docs/): This project is built using typescript and was created using the template provided by create react app `npx create-react-app my-app --template typescript`.
+- [tailwindcss](https://tailwindcss.com/): This is the framework used for the styles of the app.
 
 ## Most important dev dependencies!
 
-- [eslint](https://eslint.org/): This is the lint to check the use of the style guide
-- [eslint-config-airbnb](https://github.com/airbnb/javascript): This is the style guide used
+- [eslint](https://eslint.org/): This is the lint to check the use of the style guide.
+- [eslint-config-airbnb](https://github.com/airbnb/javascript): This is the style guide used.
 - [husky](https://typicode.github.io/husky/#/): Used to check that the files comply with the style guide used in the project at the time of commit.
 - [prettier](https://prettier.io/): This is the formatter used in the project, which has a configuration explained in more detail below.
 - [lint-staged](https://github.com/okonet/lint-staged): Used in conjunction with husky to checker the linter during the commit.
@@ -133,7 +133,7 @@ To use this application locally, you should follow these steps below:
 
 ### Redux DevTools
 
-To use redux and validate its use in the DEV environment, install the chrome extension [Redux DevTools](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd)
+To use redux and validate its use in the development environment, install the chrome extension [Redux DevTools](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd)
 
 ## Considerations:
 
@@ -141,47 +141,46 @@ To use redux and validate its use in the DEV environment, install the chrome ext
 
 The structure of this project is separated into folders by responsibility within the project as follows:
 
-**assets**
-Contains a folder called icons, inside which are all the images used for the icons inside the body of the application.
+- **assets**
+  Contains a folder called icons, inside which are all the images used for the icons inside the body of the application.
 
-**components**
+- **components**
+  The structure used in which the organization of the functional components is based on the methodology of creation of design systems [Atomic Design](https://atomicdesign.bradfrost.com/) from which the following levels were taken:
 
-The structure used in which the organization of the functional components is based on the methodology of creation of design systems [Atomic Design](https://atomicdesign.bradfrost.com/) from which the following levels were taken:
+  - Atoms: These are the basic components of matter. Applied to this project, atoms are the smallest component that does not contain other components within itself, such as a button.
+  - Molecules: Molecules are groups of atoms bonded together and are the smallest fundamental units of a compound. These molecules acquire their own properties and serve as the backbone of our design systems.
+  - Organisms: Organisms are groups of molecules bonded together to form a relatively complex and distinct section of an interface.
+  - Templates: Templates consist primarily of groups of organisms joined together to form pages. This is where we begin to see the design as a whole.
 
-- Atoms: These are the basic components of matter. Applied to this project, atoms are the smallest component that does not contain other components within itself, such as a button.
-- Molecules: Molecules are groups of atoms bonded together and are the smallest fundamental units of a compound. These molecules acquire their own properties and serve as the backbone of our design systems.
-- Organisms: Organisms are groups of molecules bonded together to form a relatively complex and distinct section of an interface.
-- Templates: Templates consist primarily of groups of organisms joined together to form pages. This is where we begin to see the design as a whole.
+  Each component stores the following in its own folder:
 
-Each component stores the following in its own folder:
+  - The functional component.
+  - Its own custom hook files,
+  - A folder containing the component's tests
+  - If necessary, there would be a file containing the component's styles.
 
-- The functional component.
-- Its own custom hook files,
-- A folder containing the component's tests
-- If necessary, there would be a file containing the component's styles.
+- **globals**
+  Contains the global constants defined for the project such as the interfaces for the Post It components.
 
-**globals**
-Contains the global constants defined for the project such as the interfaces for the Post It components.
+- **redux**
+  This project uses Redux to manage the state of the application. For this reason, the following is a comment about the structure of redux.
+  This project has a root folder called redux structured as follows:
 
-**redux**
-
-This project uses Redux to manage the state of the application. For this reason, the following is a comment about the structure of redux
-
-This project has a root folder called redux structured as follows
-
+  ```
     redux
-        reducers
-        store
+      reducers
+      store
+  ```
 
-- **reducers:** Contains the two slices of the redux store, one to handle the state and reducers of the trash bin and the other to handle the state and reducers of the workspace.
+  - **reducers:** Contains the two slices of the redux store, one to handle the state and reducers of the trash bin and the other to handle the state and reducers of the workspace.
 
-- **store:** The store holds the state of the application.
+  - **store:** The store holds the state of the application.
 
-**styles**
-Contains the index.css file inside which there are @tailwind directives for each of Tailwind’s layers.
+- **styles**
+  Contains the index.css file inside which there are @tailwind directives for each of Tailwind’s layers.
 
-**utils**
-Contains the utilities necessary for the global use of the application.
+- **utils**
+  Contains the utilities necessary for the global use of the application.
 
 The **Root.tsx** component, wraps the application so it is where the provider is located and where the routes of the application are managed.
 
