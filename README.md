@@ -262,11 +262,9 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 As an adaptation to the airbnb style guide and typescript, the use of this function statement is recommended:
 
-    ```
     export default function Component({ message }: AppProps) {
       return <div>{message}</div>;
     }
-    ```
 
 As we see in the example above this is a declarative function with **typed props** (props should be an `AppProps` so we could not pass anything different).
 
