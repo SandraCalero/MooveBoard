@@ -18,7 +18,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Features
 
-<h3 align="center"> Create a new Post it. </h3>
+### Create a new Post it.
 
 ![create_postIt](https://user-images.githubusercontent.com/85451781/172679608-0fe75c48-4bfa-468c-8fd8-16133fd6183c.gif)
 
