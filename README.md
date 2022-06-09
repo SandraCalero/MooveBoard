@@ -94,22 +94,22 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 This project includes the next libraries, you could read the official documentation.
 
-- [react](https://en.reactjs.org/): It is the library/framework used to build the application.
+- [react](https://en.reactjs.org/): This is the library/framework used to build the application.
 - [react-router-dom](https://reactrouter.com/docs/en/v6): The routing of this application is managed with react-router-dom.
 - [react-redux](https://react-redux.js.org/introduction/getting-started): It is used to handle the global state of the application.
 - [redux-toolkit](https://redux-toolkit.js.org/tutorials/typescript): The official toolkit for efficient Redux development.
 - [typescript](https://www.typescriptlang.org/docs/): This project is built using typescript and was created using the template provided by create react app `npx create-react-app my-app --template typescript`
-- [tailwindcss](https://tailwindcss.com/):
+- [tailwindcss](https://tailwindcss.com/): This is the framework used for the styles of the app
 
 ## Most important dev dependencies!
 
-- eslint: https://eslint.org/
-- eslint-config-airbnb: https://github.com/airbnb/javascript
-- husky: https://typicode.github.io/husky/#/
-- prettier: https://prettier.io/
-- lint-staged: https://github.com/okonet/lint-staged
-- testing-library-react: https://testing-library.com/docs/react-testing-library/intro/
-- testing-library-jest-dom:https://jestjs.io/docs/getting-started#using-typescript
+- [eslint](https://eslint.org/): This is the lint to check the use of the style guide
+- [eslint-config-airbnb](https://github.com/airbnb/javascript): This is the style guide used
+- [husky](https://typicode.github.io/husky/#/): Used to check that the files comply with the style guide used in the project at the time of commit.
+- [prettier](https://prettier.io/): This is the formatter used in the project, which has a configuration explained in more detail below.
+- [lint-staged](https://github.com/okonet/lint-staged): Used in conjunction with husky to checker the linter during the commit.
+- [testing-library-react](https://testing-library.com/docs/react-testing-library/intro/): Allows to perform tests by rendering components in a DOM.
+- [testing-library-jest-do](https://jestjs.io/docs/getting-started#using-typescript): This is the framework used for testing in conjunction with the react testing library.
 
 ## Installation
 
