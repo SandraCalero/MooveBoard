@@ -187,7 +187,7 @@ The structure of this project is separated into folders by responsibility within
 
   Contains the utilities necessary for the global use of the application.
 
-The **Root.tsx** component, wraps the application so it is where the provider is located and where the routes of the application are managed.
+The **Root.tsx** component, wraps the application so, it is where the provider is located and where the routes of the application are managed.
 
 ### About Branching and Commits
 
@@ -244,15 +244,15 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 ### About relevant technical decisions made
 
-1. It was decided to use typescript for this project because it is a strongly typed programming language that, as a superset of javascript, is compatible with javascript. It is known to be structured, highly secure and more consistent than vanilla javascript, any typescript checking runs at compile time and VSCode allows to visualize typing errors just by understanding the typescript extension of a file so it is possible to check types and identify errors at compile time.
+1. It was decided to use typescript for this project because it is a strongly typed programming language that, as a superset of javascript, is compatible with javascript. It is known to be structured, highly secure and more consistent than vanilla javascript, any typescript checking runs at compile time and VSCode allows to visualize typing errors just by understanding the typescript extension of a file so, it is possible to check types and identify errors at compile time.
 
 2. This application does not use back end services, for this reason, the application state for the workspace and the trash bin is saved in the local storage.
 
-3. This application follows the [Airbnb style guide](https://github.com/airbnb/javascript), to check all files automatically [eslint](https://eslint.org/docs/user-guide/getting-started) was installed, whose configuration is in the .eslintrc.js file. Additionally [prettier](https://prettier.io/) is being used as a formatter, and due to conflicts that may arise between eslint and prettier, the .prettierrc file was created to configure prettier so that eslint styles take precedence. It was taken into account that the auto-generated files should not be formatted or taken into account in eslint, so they were listed in the .eslintignore and .prettierignore files.
+3. This application follows the [Airbnb style guide](https://github.com/airbnb/javascript), to check all files automatically [eslint](https://eslint.org/docs/user-guide/getting-started) was installed, whose configuration is in the .eslintrc.js file. Additionally [prettier](https://prettier.io/) is being used as a formatter, and due to conflicts that may arise between eslint and prettier, the .prettierrc file was created to configure prettier so, that eslint styles take precedence. It was taken into account that the auto-generated files should not be formatted or taken into account in eslint, so, they were listed in the .eslintignore and .prettierignore files.
 
 4. In order to avoid commits of files that do not comply with the style guide configured in the project, the command `npx mrm@2 lint-staged` was used, which creates the husky script that executes the lint-staged that validates the files and prevents the commit of those that do not comply with the eslint.
 
-5. Although the Post-it and the Post-it list of the workspace and the trash bin look the same, their behavior, the type of properties and some characteristics are very different, so managing a single component for the workspace and the trash bin would not follow the SRP (Single Responsability Principle) since the number of variables and different functions would significantly increase the size of the component.
+5. Although the Post-it and the Post-it list of the workspace and the trash bin look the same, their behavior, the type of properties and some characteristics are very different, so, managing a single component for the workspace and the trash bin would not follow the SRP (Single Responsability Principle) since the number of variables and different functions would significantly increase the size of the component.
 
 6. Tailwindcss was used for the styling of the application because it allows to build websites quickly and its mobile first approach makes it easier to develop responsive applications.
 
@@ -266,11 +266,11 @@ As an adaptation to the airbnb style guide and typescript, the use of this funct
       return <div>{message}</div>;
     }
 
-As we see in the example above this is a declarative function with **typed props** (props should be an `AppProps` so we could not pass anything different).
+As we see in the example above this is a declarative function with **typed props** (props must be of type `AppProps` so, we could not pass anything different).
 
 ### Deployment
 
-This application is deployed on [Heroku](https://www.heroku.com/) using the github connection. The main branch is synconized with heroku so all the updates made on this branch will be deployed in the url https://mooveboard.herokuapp.com/.
+This application is deployed on [Heroku](https://www.heroku.com/) using the github connection. The main branch is synconized with heroku so, all the updates made on this branch will be deployed in the url https://mooveboard.herokuapp.com/.
 
 ## Contributing
 
