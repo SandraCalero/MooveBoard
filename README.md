@@ -156,9 +156,9 @@ The structure of this project is separated into folders by responsibility within
 
   Each component stores the following in its own folder:
 
-  - The functional component.
+  - The functional component,
   - Its own custom hook files,
-  - A folder containing the component's tests
+  - A folder containing the component's tests, and
   - If necessary, there would be a file containing the component's styles.
 
 - **globals**
@@ -167,8 +167,7 @@ The structure of this project is separated into folders by responsibility within
 
 - **redux**
 
-  This project uses Redux to manage the state of the application. For this reason, the following is a comment about the structure of redux.
-  This project has a root folder called redux structured as follows:
+  This project uses Redux to manage the status of the application, therefore, the structure of its folder is specified below.
 
   ```
     redux
@@ -181,9 +180,11 @@ The structure of this project is separated into folders by responsibility within
   - **store:** The store holds the state of the application.
 
 - **styles**
+
   Contains the index.css file inside which there are @tailwind directives for each of Tailwind’s layers.
 
 - **utils**
+
   Contains the utilities necessary for the global use of the application.
 
 The **Root.tsx** component, wraps the application so it is where the provider is located and where the routes of the application are managed.
@@ -254,6 +255,8 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 5. Although the Post-it and the Post-it list of the workspace and the trash bin look the same, their behavior, the type of properties and some characteristics are very different, so managing a single component for the workspace and the trash bin would not follow the SRP since the number of variables and different functions would significantly increase the size of the component.
 
 6. Tailwindcss was used for the styling of the application because it allows to build websites quickly and its mobile first approach makes it easier to develop responsive applications.
+
+7. Methodologies such as atomic design and gitflow workflow were used as a guide adapted for this project, they were not strictly used.
 
 ### Functional components standard
 
